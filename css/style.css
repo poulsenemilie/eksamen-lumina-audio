@@ -346,11 +346,23 @@ background-color: #efe3d9;
 /* Denne regel fjerner standardstyling fra fieldset og arrangerer farveknapperne på en vandret række. */
 .color-options {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 18px;
-  border: none;
-  padding: 0;
   margin: 0 0 56px 0;
-  min-inline-size: 0;
+}
+
+.color-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.color-dots {
+  display: flex;
+  gap: 18px;
+  align-items: center;
 }
 
 /* Hver farveknap styles som en cirkel, og den aktive variant markeres med en tydelig kant. */
@@ -516,8 +528,146 @@ background-color: #efe3d9;
 }
 
 /* --------------------------- */
+/* Specifikationer og app section */
+/* --------------------------- */
+.spec-app-section {
+  display: grid;
+  grid-template-columns: 37% 63%;
+  gap: 24px;
+  padding: 0px 24px 20px;
+  align-items: stretch;
+  background-color: #efe3d9;
+  height: 100%;
+  min-height: 361px;
+  box-sizing: border-box;
+}
+
+.spec-box,
+.app-box {
+  background-color: white;
+  border-radius: 18px;
+  text-align: left;
+  margin-top: 4%;
+  box-sizing: border-box;
+}
+
+.spec-box {
+  padding: 30px 30px 34px;
+}
+
+.spec-box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 28px;
+}
+
+/* Hvert details-element får en bundlinje og luft, så specifikationerne fremstår som en ryddelig fold-ud-liste. */
+.spec-box details {
+  border-bottom: 1px solid #9a9a9a;
+  padding: 12px 0;
+}
+
+.spec-box summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  position: relative;
+  padding-right: 30px;
+}
+
+.spec-box summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Denne pseudo-selector indsætter plus-tegnet visuelt, så brugeren kan se at punktet kan åbnes og lukkes. */
+.spec-box summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  font-size: 2rem;
+  font-weight: 300;
+  color: #8d8d8d;
+  line-height: 1;
+}
+
+.spec-box details[open] summary::after {
+  content: "×";
+}
+
+.spec-box details p {
+  margin-top: 16px;
+  max-width: 95%;
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+/* App-boksen bruger flexbox til at placere tekst og telefonbillede i hver sin side af boksen. */
+.app-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin-right: 3%;
+  margin-top: 2.5%;
+  min-height: 361px;
+  box-sizing: border-box;
+}
+
+.app-text {
+  max-width: 520px;
+}
+
+.app-text h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.app-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 34px;
+  max-width: 500px;
+}
+
+/* Her samles App Store- og Google Play-knapperne på en fleksibel række med ens afstand. */
+.store-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.store-buttons img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+.app-image img {
+  width: 140px;
+  max-width: 100%;
+  display: block;
+  margin-right: 2%;
+}
+
+/* --------------------------- */
 /* INSPO SEKTIONEN */
 /* --------------------------- */
+
       #inspoHeadline{
         font-size: 2rem;
         margin-bottom: 40px;
@@ -539,7 +689,6 @@ background-color: #efe3d9;
       .inspoPlaces img:hover {  /* bevægelses function */
         transform: scale(1.03); /* skaleringen af funktionen */
       }
-
 /* --------------------------- */
 /* OMKRING LUMINA SEKSIONEN */
 /* --------------------------- */
@@ -550,8 +699,8 @@ background-color: #efe3d9;
         margin: 30px auto;
         }
       #textAboutLumina p{
-        max-width: 700px;  /* Max bredde for læsbarhed */
-        font-size: 1.15rem;
+        max-width: 900px;  /* Max bredde for læsbarhed */
+        font-size: 1rem;
         line-height: 2;
         margin: auto;
         margin-bottom: 20px;
@@ -564,8 +713,9 @@ background-color: #efe3d9;
         padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
         font-size: 1rem;
         font-style: italic;
+        font-family: sans-serif;
         letter-spacing: 3px;
-        background-color: #445544;
+        background-color: #b88a8a;
         color: white;
         border: none;
         border-radius: 55px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */

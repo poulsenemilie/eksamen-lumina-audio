@@ -87,21 +87,8 @@
 
 <!-- button bruges nedenunder i stedet for bare et billede, fordi thumbnailen er et interaktivt element man kan klikke på. -->
 
-        <div class="thumbnail-row" id="thumbnailRow" aria-label="Produktbilleder">
-          <button class="thumbnail active" type="button" data-index="0" aria-label="Vis billede 1">
-            <img src="img/dusty-rose-1.png" alt="LUMINA One forfra">
-          </button>
-          <button class="thumbnail" type="button" data-index="1" aria-label="Vis billede 2">
-            <img src="img/dusty-rose-2.png" alt="LUMINA One fra siden">
-          </button>
-          <button class="thumbnail" type="button" data-index="2" aria-label="Vis billede 3">
-            <img src="img/dusty-rose-3.png" alt="LUMINA One topdetalje">
-          </button>
-          <button class="thumbnail" type="button" data-index="3" aria-label="Vis billede 4">
-            <img src="img/dusty-rose-4.png" alt="LUMINA One portdetalje">
-          </button>
+        <div class="thumbnail-row" id="thumbnailRow" aria-label="Produktbilleder"></div>
         </div>
-      </div>
 
 <!-- article bruges til produktinformationen, fordi denne del fungerer som en selvstændig informationsblok om varen. -->
       <article class="product-info">
@@ -109,16 +96,18 @@
         <p class="price">1.499,00 kr.</p>
         <p class="rating" aria-label="Bedømmelse 4,8 ud af 5 stjerner">★★★★★ <span>(128)</span></p>
 
+      <div class="color-options">
+      <p class="color-title">
+        VÆLG FARVE: <span id="selectedColorName">DUSTY ROSE</span>
+      </p>
 
-        <!-- fieldset grupperer farveknapperne, så det semantisk bliver tydeligt at de hører til samme valg. -->
-        <fieldset class="color-options">
-            <!-- legend fungerer som overskrift på fieldset og forklarer hvad brugeren vælger her. -->
-          <legend class="color-title">VÆLG FARVE: <span id="selectedColorName">DUSTY ROSE</span></legend>
-          <button class="color-dot active" type="button" data-color="dustyRose" style="background-color: #b7877d;" aria-label="Dusty Rose"></button>
-          <button class="color-dot" type="button" data-color="sageGreen" style="background-color: #9b9270;" aria-label="Sage Green"></button>
-          <button class="color-dot" type="button" data-color="moonlightWhite" style="background-color: #d8c5ba;" aria-label="Moonlight White"></button>
-          <button class="color-dot" type="button" data-color="lavenderMist" style="background-color: #c2a2cf;" aria-label="Lavender Mist"></button>
-        </fieldset>
+      <div class="color-dots">
+    <button class="color-dot active" type="button" data-color="dustyRose" style="background-color: #b7877d;" aria-label="Dusty Rose"></button>
+    <button class="color-dot" type="button" data-color="sageGreen" style="background-color: #9b9270;" aria-label="Sage Green"></button>
+    <button class="color-dot" type="button" data-color="moonlightWhite" style="background-color: #d8c5ba;" aria-label="Moonlight White"></button>
+    <button class="color-dot" type="button" data-color="lavenderMist" style="background-color: #c2a2cf;" aria-label="Lavender Mist"></button>
+    </div>
+    </div>
 
         <p class="stock"><strong>På lager</strong> - Levering 1-2 hverdage</p>
 
@@ -150,31 +139,101 @@
         <button class="continue-shopping" id="continueShopping" type="button">Fortsæt med at handle</button>
       </div>
     </div>
-  
+   <!-- Specifikationer -->
+      <section class="spec-app-section" aria-labelledby="spec-heading">
+      <div class="spec-box">
+        <h2 id="spec-heading">Specifikationer</h2>
+
+        <details> <!-- details bruges til fold-ud-indhold, så brugeren kan åbne og lukke ekstra information uden ekstra JavaScript. -->
+          <summary>Lyd & ydeevne</summary> <!-- summary er den synlige overskrift man klikker på for at åbne eller lukke det tilhørende details-indhold. -->
+          <p>
+            LUMINA One er skabt til at levere kraftfuld og klar lyd i enhver social
+            setting. Med op til 100 dB fylder højtaleren rummet uden at miste den
+            varme og balancerede lydoplevelse.
+          </p>
+        </details>
+
+        <details>
+          <summary>Batteri</summary>
+          <p>
+            LUMINA One har op til 18 timers batteritid og oplades via USB-C, så du
+            nemt kan tage musikken med hele dagen.
+          </p>
+        </details>
+
+        <details>
+          <summary>Tilslutning</summary>
+          <p>
+            Højtaleren understøtter Bluetooth 5.3, AUX-indgang og mulighed for at
+            forbinde flere enheder.
+          </p>
+        </details>
+
+        <details>
+          <summary>Mål & vægt</summary>
+          <p>
+            LUMINA One måler 28 cm i bredden, 16 cm i højden og 12 cm i dybden og
+            vejer 3 kg.
+          </p>
+        </details>
+
+        <details>
+          <summary>Design og kvalitet</summary>
+          <p>
+            Designet er inspireret af skandinavisk minimalisme med slidstærke
+            materialer, bløde former og IPX5-vandafvisning.
+          </p>
+        </details>
+      </div>
+
+
+    <!-- app boks -->
+
+     <article class="app-box" aria-labelledby="app-heading"> 
+        <div class="app-text">
+          <h2 id="app-heading">Del musikken. Del øjeblikket</h2>
+          <p>
+            Med LUMINA-appen kan du nemt blende dine playlister med venner og skabe
+            den perfekte lyd sammen
+          </p>
+
+        <!-- denne div samler download-links til app stores, så de to knapper står samlet som én handling. -->
+          <div class="store-buttons">
+            <a href="#" aria-label="Download på App Store">
+              <img src="img/app-store.png" alt="Download on the App Store">
+            </a>
+            <a href="#" aria-label="Download på Google Play">
+              <img src="img/google-play.png" alt="Get it on Google Play">
+            </a>
+          </div>
+        </div>
+
+        <div class="app-image">
+          <img src="img/lumina-app-phone.png" alt="LUMINA app vist på en mobiltelefon">
+        </div>
+      </article>
+    </section>
+
     <!-- Inspo sektionen -->
     <section class="inspo">
       <h2 id="inspoHeadline">Tag din LUMINA One med overalt</h2>
 
       <figure class="inspoPlaces">
-        <img src="img/luminapicnic.png" alt="Lumina Speaker">
-        <img src="img/luminaparty.png" alt="Lumina Speaker">
-        <img src="img/pinkluminabeach.png" alt="Lumina Speaker">
-        <img src="img/luminagreen.png" alt="Lumina Speaker">
-        <img src="img/luminaconnect.png" alt="Lumina Speaker">
+        <img src="img/lifestyle-1.png" alt="Lumina Speaker">
+        <img src="img/lifestyle-2.png" alt="Lumina Speaker">
+        <img src="img/lifestyle-3.png" alt="Lumina Speaker">
+        <img src="img/lifestyle-4.png" alt="Lumina Speaker">
+        <img src="img/lifestyle-5.png" alt="Lumina Speaker">
         <img src="img/luminagreen1.png" alt="Lumina Speaker">
       </figure>
     </section>
 
     <!-- Om virksomheden -->
-    <aside id="textAboutLumina">
+    <section id="textAboutLumina">
       <p>LUMINA Audio er et nordisk lydbrand skabt til unge kvinder, der lever med musik som en naturlig del af deres hverdag. 
         Vores brand forener kraftfuld lyd med æstetik funktionalitet, og skaber produkter der både kan høres, ses og mærkes. Hos LUMINA handler det ikke kun om teknologi, men om stemning og fællesskab. Om solnedgange ved stranden, picnic i parken og festligheder med menneskerne omkring dig. 
         Musikken er samlingspunktet - og designet er en del af oplevelsen.</p>
-
-      <img id="anmeldelser-billede" src="img/anmeldelser.png" alt="trustpilot anmeldelser">
-
-      <button class="anmeldelserKnap">Læs vores anmeldelser på Trustpilot</button>
-    </aside>
+    </section>
 
     <!-- Footer -->
       <footer class="site-footer">
