@@ -677,7 +677,8 @@ background-color: #efe3d9;
         grid-template-columns: repeat(3, 1fr); /* 3 billeder pr række */
         gap: 30px;
         max-width: 1100px;
-        margin: 0 auto;
+        margin: 0 auto; /* Får den til at stå i midten */
+        margin-bottom: 5%; /* gør at det er luft forneden*/
       }
       .inspoPlaces img { /* Styling af billederne */
         width: 100%;
@@ -690,67 +691,60 @@ background-color: #efe3d9;
         transform: scale(1.03); /* skaleringen af funktionen */
       }
 /* --------------------------- */
-/* OMKRING LUMINA SEKSIONEN */
+/* anmeldelser */
 /* --------------------------- */
       
-      #textAboutLumina{
-        
-        padding: 30px 60px;
-        margin: 30px auto;
-        }
-      #textAboutLumina p{
-        max-width: 900px;  /* Max bredde for læsbarhed */
-        font-size: 1rem;
-        line-height: 2;
-        margin: auto;
-        margin-bottom: 20px;
-        text-align: center; 
-      }
-      
-    .anmeldelserKnap {
-        display: block;   /* blokerer knap og gør margin auto virker */
-        margin: 40px auto 30px auto; /* afstand til andre elementer */
-        padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
-        font-size: 1rem;
-        font-style: italic;
-        font-family: sans-serif;
-        letter-spacing: 3px;
-        background-color: #b88a8a;
-        color: white;
-        border: none;
-        border-radius: 55px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
-        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
-        transition: 0.3s ease;      /* Transformationen/animationen af knappen tager 3 milisekunder og "ease" er en timing function = bestemmer bevægelsens tempo-kurve*/
-      }
-      #anmeldelser-billede{
-        width: 100%;
-        height: auto;       /* Bevarer proportioner */
-        display: block;    /* Fjerner inline-block whitespace */
-       
-      }
-      .anmeldelserKnap:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
-        background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
-        transform: scale(1.05);     /* transformere knappen ved at scalere den 1.05 gang = den bliver 5% større */
-      }
       
 /* --------------------------- */
 /* FOOTER */
 /* --------------------------- */
-/* footer boksen/farven */
-    .site-footer {
-        background-color: #99A490;
-        color: rgb(77, 96, 73);
-        padding: 16px;
-        font-size: 14px;
-        line-height: 30px;
-        }
-    /* footer tekst */
-        .footer-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        max-width: 600px; /* juster bredden */
-        margin: 0 auto;   /* centrer indholdet */
-        text-align: center; /* så kolonner står i midten */
-        }
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 0.9fr;
+  gap: 70px;
+  background-color: #f4ece6;
+  padding: 50px 55px;
+  color: #1f1f1f;
+  font-family: sans-serif;
+}
+
+.footer-logo {
+  width: 200px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.footer-description {
+  max-width: 520px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-column h3,
+.footer-social h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.footer-column p {
+  font-size: 1rem;
+  margin: 0 0 18px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.social-icons img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
     
