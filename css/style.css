@@ -62,7 +62,7 @@ background-color: #efe3d9;
 /* --------------------------- */
       .hero{
         position: relative;  /* position: relative; = Gør at logoet kan placeres ovenpå */
-        height: 100vh;
+        height: 70vh;
         overflow: hidden; /* Skjuler alt der går udenfor containeren */
 
       /* --------------------------- */
@@ -70,7 +70,7 @@ background-color: #efe3d9;
       }
       #heroPicture{
         width: 100%;
-        height: 80vh;
+        height: 70vh;
         object-fit: cover;    /* object-fit: cover; = Gør billedet fylder hele området, fra cover til cover, uden at blive mast */
         display: block;  /* Fjerner inline-block whitespace under billeder */
       }
@@ -80,14 +80,12 @@ background-color: #efe3d9;
       #luminaOne{
         position: absolute;     /* position: abselut; = placerer logo frit ovenpå hero*/
         top: 150px;
-        left: 7.5%; /* Midt på horisontalt */
+        left: 7.5%;
         font-size: 6rem;
         font-family: "Playfair Display";
         letter-spacing: 12px;
         font-weight: 500;
         color: #9c7474;
-        stroke-width: 1%;
-        -webkit-text-stroke-color: white;
         }
       /* --------------------------- */
       /* Hero tekst */
@@ -159,6 +157,57 @@ background-color: #efe3d9;
         background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
         transform: scale(1.05);  
         }
+
+.info-section {
+  background-color: #efe3d9;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.info-text {
+  max-width: 760px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-left: 12%;
+  margin-top: 1%;
+}
+/* --------------------------- */
+/* PRODUKT FUNKTIONER SEKSIONEN */
+/* --------------------------- */
+
+  .featuresContainer {
+  display: grid; /* Grid container for kolonner */
+  grid-template-columns: repeat(4, 300px);  /* 4 kolonner */
+  gap: 20px; /* 20px mellem rækker */
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+
+.featuresContainer li {
+  display: flex; /* gør ikonet og teksten til en linje */
+  align-items: center;  /* vertikal centering */
+  gap: 12px; /* afstand mellem ikon og tekst */
+  background: rgba(255, 255, 255, 0.1); /* Let baggrund for gennemsigtig effekt */
+  padding: 22px 18px; /* indvendig afstand */
+  border-radius: 25px; /* afrundede hjørner */
+  font-weight: 550;
+  color: rgb(77, 96, 73); /* font farve */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* let skygge */
+  min-height: 95px; /* ens højde på alle felter */
+  text-align: left;
+}
+
+.featuresContainer li .icon {
+  font-size: 2rem; /* størrelse på emoji/ikon */
+  flex-shrink: 0;
+}
 
 /* --------------------------- */
 /* PRODUKT SEKTIONEN MED FARVER */
@@ -250,37 +299,6 @@ background-color: #efe3d9;
       padding-bottom: 20px;
       text-align: center;
     }
-/* --------------------------- */
-/* PRODUKT FUNKTIONER SEKSIONEN */
-/* --------------------------- */
-      #featuresHeadline{
-        font-size: 2.5rem;
-        letter-spacing: 3px;
-        margin-bottom: 35px; /* Afstand under overskrift */
-      }
-      .featuresContainer {
-        display: grid;   /* Grid container for kolonner */
-        grid-template-columns: 1fr 1fr; /* 2 kolonner */
-        gap: 20px 40px; /* 20px mellem rækker, 40px mellem kolonner */
-        max-width: 700px; /* max bredde på grid */
-        margin: 0 auto;  /* centrerer grid horisontalt */
-      }
-      .featuresContainer li {
-        display: flex;            /* gør ikonet og teksten til en linje */
-        align-items: center;      /* vertikal centering */
-        gap: 15px;                /* afstand mellem ikon og tekst */
-        background: rgba(255, 255, 255, 0.1); /* Let baggrund for gennemsigtig effekt */
-        padding: 20px 25px; /* indvendig afstand */
-        border-radius: 25px; /* afrundede hjørner */
-        font-weight: 550;
-        color: rgb(77, 96, 73); /* font farve */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* let skygge */
-        min-height: 60px;          /* ens højde på alle felter */
-      }
-      /* Ikonerne */
-      .featuresContainer li .icon {
-        font-size: 2.2rem; /* størrelse på emoji/ikon */
-      }
 
 /* --------------------------- */
 /* KØB NU KNAP */
