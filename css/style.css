@@ -167,14 +167,16 @@ background-color: #efe3d9;
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   font-weight: 500;
+  margin-top: 2%;
 }
 
 .info-text {
   max-width: 760px;
   font-size: 0.9rem;
   line-height: 1.7;
-  margin-left: 12%;
+  margin-left: 22%;
   margin-top: 1%;
+  margin-bottom: 3%;
 }
 /* --------------------------- */
 /* PRODUKT FUNKTIONER SEKSIONEN */
@@ -210,117 +212,308 @@ background-color: #efe3d9;
 }
 
 /* --------------------------- */
-/* PRODUKT SEKTIONEN MED FARVER */
+/* PRODUKT SEKTIONEN */
 /* --------------------------- */
-      .productBrowse {
-        padding: 10px 12%; /* Laver plads omkring hele sektionen: 70px top/bund, 12% venstre/højre */
-        display: grid;
-        justify-items: center; /* Centrerer elementerne INDE i gridet */
-        gap: 50px;             /* Laver 50px mellemrum mellem rækker i grid */
-        }
-    /* --------------------------- */
-    /* Hovedbillede */
-      #productPicture {
-        width: 100%;
-        max-width: 500px;   /* Max bredde */
-        height: auto;       /* Bevarer proportioner */
-        display: block;    /* Fjerner inline-block whitespace */
-        }
-    /* --------------------------- */
-    /* Layout for colorways */
-      .productColor {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 kolonner med lige stor bredde (1 fraction hver) */
-        justify-content: center; /* Centrerer hele gridet horisontalt i containeren */
-        gap: 90px; /* Laver 90px mellem hver farveboks */
-        }
-    /* --------------------------- */
-    /* Wrapper omkring hvert billede */
-      .colorOption {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 10px; /* fast radius */
-        background-color: transparent; /* start uden farve */
-        padding: 5px;  /* fast padding, ikke på hover */
-        }
-    /* --------------------------- */
-    /* Hover effekt på containeren */
-     .colorOption:hover {
-        background-color: rgb(204, 214, 196);  /* Baggrund bliver lys grøn/grå ved hover */
-        }
-    /* --------------------------- */
-    /* Selve farvebillederne */
-      .colorOption img {
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        }
-    /* --------------------------- */
-    /* Hover effekt på containeren*/
-      .colorOption:hover img {
-        transform: scale(1.3);  
-        }
-    /* --------------------------- */
-    /* Farvenavnet (skjult som standard fra start) */
-      .colorName {
-        margin-top: 12px;
-        font-size: 0.9rem;
-        font-style: italic; /* Gør teksten skråskrift */
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        color: rgb(77, 96, 73);
-        }
-    /* --------------------------- */
-    /* Vis farvenavnet ved hover */
-      .colorOption:hover .colorName {
-        opacity: 1;
-        transform: translateY(0);
-        }
+      /* Denne regel bygger produktsektionen som et todelt grid med galleri til venstre og produktinformation til højre. */
+.product-showcase {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  padding: 60px 40px;
+}
 
-    /* --------------------------- */
-     /*Alt tekst sat ind i Sectioner*/
-     section {
-      padding: 50px 15%; /* Top/bund og venstre/højre padding */
-      text-align: center;  /* Centrerer al tekst i section */
-    }
-     /* --------------------------- */
-     /*Produkt tekst*/
-    #textAboutProduct p{
-      max-width: 700px;  /* Max bredde for læsbarhed */
-      font-size: 1.15rem;
-      line-height: 2;
-      margin: 0 auto;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      text-align: center;
-    }
+/* Her stables hovedbilledet og thumbnails lodret og centreres som én samlet billedkolonne. */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* --------------------------- */
-/* KØB NU KNAP */
-/* --------------------------- */  
-      /* Knappen */
-      .button {
-        display: block;   /* blokerer knap og gør margin auto virker */
-        margin: 10px auto; /* afstand til andre elementer */
-        padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
-        font-size: 1rem;
-        letter-spacing: 3px;
-        background-color: #445544;
-        color: white;
-        border: none;
-        border-radius: 55px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
-        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
-        transition: 0.3s ease;      /* Transformationen/animationen af knappen tager 3 milisekunder og "ease" er en timing function = bestemmer bevægelsens tempo-kurve*/
-      }
-      .button:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
-        background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
-        transform: scale(1.05);     /* transformere knappen ved at scalere den 1.05 gang = den bliver 5% større */
-      }
+/* Denne wrapper holder det store produktbillede og pilene samlet i et fast billedområde med skjult overflow. */
+.main-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  background: #f4e8df;
+}
+
+/* Her får hovedbilledet fuld bredde og højde, mens object-fit sørger for at det fylder pænt uden at forvrænges. */
+.main-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Disse regler placerer pilene oven på billedet og gør dem klikbare som navigation i galleriet. */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #111;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+/* Thumbnail-rækken bruger flexbox til at vise de små produktbilleder på en centreret vandret linje. */
+.thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+/* Hver thumbnail får en fast størrelse og fungerer som klikbart valg af hvilket billede der skal vises stort. */
+.thumbnail {
+  width: 110px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 4px;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail.active {
+  border-color: #111;
+}
+
+/* Her styles produktnavnet, så det fremstår som den vigtigste overskrift i købskortet. */
+.product-info {
+  text-align: left;
+  align-self: start;
+  padding-left: 20px;
+}
+.product-info h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #a57c7c;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.rating {
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 44px;
+}
+
+.rating span {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #777;
+  vertical-align: middle;
+}
+
+.color-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.color-title span {
+  font-weight: 500;
+}
+
+/* Denne regel fjerner standardstyling fra fieldset og arrangerer farveknapperne på en vandret række. */
+.color-options {
+  display: flex;
+  gap: 18px;
+  border: none;
+  padding: 0;
+  margin: 0 0 56px 0;
+  min-inline-size: 0;
+}
+
+/* Hver farveknap styles som en cirkel, og den aktive variant markeres med en tydelig kant. */
+.color-dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.color-dot.active {
+  border-color: #111;
+}
+
+.stock {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 34px;
+}
+
+/* Her placeres antalvælger og købsknap ved siden af hinanden som de vigtigste handlinger i produktkortet. */
+.purchase-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Denne boks holder minusknap, antal og plusknap samlet og giver dem et tydeligt afgrænset input-lignende udtryk. */
+.quantity-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 78px;
+  border: 1px solid #cfcfcf;
+  border-radius: 14px;
+  padding: 0 26px;
+  background: #fff;
+}
+
+.quantity-box button {
+  border: none;
+  background: transparent;
+  font-size: 3rem;
+  color: #8b8b8b;
+  cursor: pointer;
+}
+
+.quantity-box span {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Købsknappen får en markant baggrundsfarve, størrelse og typografi, så den bliver den tydeligste call-to-action i sektionen. */
+.add-to-cart {
+  height: 78px;
+  min-width: 280px;
+  border: none;
+  border-radius: 14px;
+  background: #ba8888;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* Overlayet dækker hele skærmen med en mørk gennemsigtig baggrund, så popupen træder tydeligt frem oven på siden. */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Når active-klassen tilføjes med JavaScript, bliver overlayet synligt og centrerer popupen på skærmen. */
+.cart-overlay.active {
+  display: flex;
+}
+
+/* Selve popup-boksen styles her med lys baggrund, afrundede hjørner, skygge og centreret indhold. */
+.cart-popup {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  background: #f7ebe3;
+  border-radius: 22px;
+  padding: 34px 40px 36px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.close-popup {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 2.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Denne cirkel fungerer som et visuelt succesikon, der understøtter beskeden om at varen er lagt i kurven. */
+.popup-check {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 24px;
+  border: 3px solid #b79292;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #b79292;
+}
+
+.cart-popup h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.cart-popup p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 34px;
+  color: #111;
+}
+
+.popup-cart-btn {
+  display: inline-block;
+  background: #b88a8a;
+  color: #fff;
+  padding: 18px 46px;
+  border-radius: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.continue-shopping {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background: transparent;
+  color: #b08e8e;
+  text-decoration: underline;
+  font-family: "Inter", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 /* --------------------------- */
 /* INSPO SEKTIONEN */

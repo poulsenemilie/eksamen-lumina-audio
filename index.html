@@ -64,49 +64,92 @@
       </ul>
     </section>
 
-    <!-- Om produktet -->
-    <article class="productBrowse">
-    <img src="img/luminapink.png" alt="Lumina One" id="productPicture">
 
-    <div class="productColor"> 
+<!-- Denne sektion bygger produktkortet, hvor brugeren kan se billeder, skifte mellem produktfotos, vælge farve, justere antal og lægge varen i kurven. -->
+    <section class="product-showcase" aria-labelledby="product-heading">
+      <div class="product-gallery">
+        <div class="main-image-wrapper">
+          <button class="arrow arrow-left" id="prevImage" type="button" aria-label="Forrige billede">
+            &#8592;
+          </button>
 
-      <div class="colorOption"> 
-        <img src="img/luminapink.png" alt="Dusty Rose" id="pink">
-        <p class="colorName">Dusty Rose</p>
+          <img
+            id="mainProductImage"
+            src="img/dusty-rose-1.png"
+            alt="LUMINA One i Dusty Rose"
+            class="main-product-image"
+          >
+
+          <button class="arrow arrow-right" id="nextImage" type="button" aria-label="Næste billede">
+            &#8594;
+          </button>
+        </div>
+
+<!-- button bruges nedenunder i stedet for bare et billede, fordi thumbnailen er et interaktivt element man kan klikke på. -->
+
+        <div class="thumbnail-row" id="thumbnailRow" aria-label="Produktbilleder">
+          <button class="thumbnail active" type="button" data-index="0" aria-label="Vis billede 1">
+            <img src="img/dusty-rose-1.png" alt="LUMINA One forfra">
+          </button>
+          <button class="thumbnail" type="button" data-index="1" aria-label="Vis billede 2">
+            <img src="img/dusty-rose-2.png" alt="LUMINA One fra siden">
+          </button>
+          <button class="thumbnail" type="button" data-index="2" aria-label="Vis billede 3">
+            <img src="img/dusty-rose-3.png" alt="LUMINA One topdetalje">
+          </button>
+          <button class="thumbnail" type="button" data-index="3" aria-label="Vis billede 4">
+            <img src="img/dusty-rose-4.png" alt="LUMINA One portdetalje">
+          </button>
+        </div>
       </div>
 
-      <div class="colorOption"> 
-        <img src="img/luminahvid.png" alt="Moonlight White" id="hvid">
-        <p class="colorName">Moonlight White</p>
-      </div>
+<!-- article bruges til produktinformationen, fordi denne del fungerer som en selvstændig informationsblok om varen. -->
+      <article class="product-info">
+        <h2 id="product-heading">LUMINA One</h2>
+        <p class="price">1.499,00 kr.</p>
+        <p class="rating" aria-label="Bedømmelse 4,8 ud af 5 stjerner">★★★★★ <span>(128)</span></p>
 
-      <div class="colorOption"> 
-        <img src="img/luminalilla.png" alt="Lavender Mist" id="lilla">
-        <p class="colorName">Lavender Mist</p>
-      </div>
 
-      <div class="colorOption"> 
-        <img src="img/luminagrøn.png" alt="Sage Green" id="grøn">
-        <p class="colorName">Sage Green</p>
-      </div>
+        <!-- fieldset grupperer farveknapperne, så det semantisk bliver tydeligt at de hører til samme valg. -->
+        <fieldset class="color-options">
+            <!-- legend fungerer som overskrift på fieldset og forklarer hvad brugeren vælger her. -->
+          <legend class="color-title">VÆLG FARVE: <span id="selectedColorName">DUSTY ROSE</span></legend>
+          <button class="color-dot active" type="button" data-color="dustyRose" style="background-color: #b7877d;" aria-label="Dusty Rose"></button>
+          <button class="color-dot" type="button" data-color="sageGreen" style="background-color: #9b9270;" aria-label="Sage Green"></button>
+          <button class="color-dot" type="button" data-color="moonlightWhite" style="background-color: #d8c5ba;" aria-label="Moonlight White"></button>
+          <button class="color-dot" type="button" data-color="lavenderMist" style="background-color: #c2a2cf;" aria-label="Lavender Mist"></button>
+        </fieldset>
 
+        <p class="stock"><strong>På lager</strong> - Levering 1-2 hverdage</p>
+
+<!-- denne div samler de interaktive købselementer: antalvælger og knappen til at lægge varen i kurven. -->
+        <div class="purchase-row">
+          <div class="quantity-box" aria-label="Vælg antal"> <!-- quantity-box er en wrapper omkring minusknap, antal og plusknap, så brugeren kan ændre hvor mange produkter der skal købes. -->
+            <button id="decreaseQty" type="button" aria-label="Fjern en">-</button>
+            <output id="quantity" aria-live="polite">1</output> <!-- output bruges til at vise det aktuelle antal, fordi værdien ændres dynamisk når brugeren trykker på plus eller minus. -->
+            <button id="increaseQty" type="button" aria-label="Tilføj en">+</button>
+          </div>
+
+          <button class="add-to-cart" id="addToCartBtn" type="button">Læg i kurv</button>
+        </div>
+      </article>
+    </section>
+<!-- denne div fungerer som et overlay over siden og bruges til at vise popup-vinduet når et produkt bliver lagt i kurven. -->
+    <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="cart-popup">
+        <button class="close-popup" id="closePopup" type="button" aria-label="Luk popup">&times;</button>
+
+        <div class="popup-check" aria-hidden="true">
+          ✓
+        </div>
+
+        <h2 id="cart-title">Lagt i kurv</h2>
+        <p>LUMINA One er nu lagt i kurv</p>
+
+        <a href="#" class="popup-cart-btn">Se kurv (<span id="cartCount">1</span>)</a>
+        <button class="continue-shopping" id="continueShopping" type="button">Fortsæt med at handle</button>
+      </div>
     </div>
-
-    <!-- Her skal der være noget med colorways og js elementer -->
-    </article>
-  
-    <!-- Om produktet -->
-    <aside id="textAboutProduct">
-      <p>LUMINA One er en bærbar højttaler skabt til sociale øjeblikke. 
-        Den kombinerer kraftfuld lyd med et nordisk, æstetisk design, 
-        der passer naturligt ind i både hjemmet og udendørslivet.
-        Udviklet til en aktiv og social livsstil er LUMINA One let at tage med og intuitiv at bruge. Den understøtter fællesskab frem for individuel kontrol – fordi musik skal deles, ikke styres. 
-        LUMINA One er mere end lyd. Det er stemning, design og fællesskab samlet i én oplevelse.</p>
-    </aside>
-  
-
-    <!-- "Køb nu" knappen -->
-      <button class="button">KØB NU</button>
   
     <!-- Inspo sektionen -->
     <section class="inspo">
@@ -144,5 +187,7 @@
             <p>Vilkår og Betingelser</p>
         </article>
       </footer>
+
+  <script src="script.js"></script>
   </body>
   </html>
