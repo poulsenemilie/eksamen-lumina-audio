@@ -132,24 +132,7 @@ background-color: #efe3d9;
         transition: 0.3s ease;      /* Transformationen/animationen af knappen tager 3 milisekunder og "ease" er en timing function = bestemmer bevægelsens tempo-kurve*/
         }
 
-      #topButtonWhite {
-        position: absolute;
-        top: 410px;
-        left: 23%;
-        display: block;   /* blokerer knap og gør margin auto virker */
-        margin-top: 50px; /* afstand til andre elementer */
-        padding: 20px 50px;     /* Afgør bredde og højde på former i pixels */
-        font-size: 1rem;
-        font-weight: 700;
-        font-family: sans-serif;
-        letter-spacing: 3px;
-        background-color: #efe3d9;
-        color: #9c7474;
-        border: none;
-        border-radius: 15px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
-        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
-        transition: 0.3s ease;  
-        }
+ 
       /* --------------------------- */
       /* Hover effekt på hero knapper */
        /* --------------------------- */
