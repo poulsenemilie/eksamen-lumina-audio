@@ -2,21 +2,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
       
-      /* "*" er en universel selector = gælder for alle elementer på siden*/
-      * { 
-        margin: 0;  
-        padding: 0;
-         /*Fjerner default margin/padding på alle elementer.*/
-        box-sizing: border-box;
-      }
+/* "*" er en universel selector = gælder for alle elementer på siden*/
+* { 
+margin: 0;  
+padding: 0;
+/*Fjerner default margin/padding på alle elementer.*/
+box-sizing: border-box;
+}
 
-      /*Fælles styling for alle elementer i body dvs. næsten hele koden*/
-      body {
-        font-family: "Inter", sans-serif;
-        color: #1f1a17;
-        background-color: #efe3d9;
-      }
-      
+/*Fælles styling for alle elementer i body dvs. næsten hele koden*/
+body {
+font-family: "Inter", sans-serif;
+color: #1f1a17;
+background-color: #efe3d9;
+}
+/* --------------------------- */
+/* NAV BAR */
+/* --------------------------- */
+  .navbar { /*styling for selve boksen med navbar med indhold*/
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.logo img { /*styling af logo i venstre hjørne*/
+  width: 120px;
+  height: auto;
+  display: block;
+  margin-left: 40px;
+}
+
+.nav-links { /*styling af boksen med links*/
+  display: flex;
+  gap: 80px;
+  margin-top: 8px;
+}
+
+.nav-links a { /*styling af selve links*/
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #9c7474;
+  margin-top: 6px;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.bag-icon img {/*styling af bag icon*/
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin-top: 7px;
+  margin-right: 40px;
+}
+
 /* --------------------------- */
 /* HERO SEKTIONEN */
 /* --------------------------- */
@@ -46,6 +86,8 @@
         letter-spacing: 12px;
         font-weight: 500;
         color: #9c7474;
+        stroke-width: 1%;
+        -webkit-text-stroke-color: white;
         }
       /* --------------------------- */
       /* Hero tekst */
@@ -73,6 +115,7 @@
         }
       /* --------------------------- */
       /* Hero knapper */
+       /* --------------------------- */
       #topButtonGreen {
         position: absolute;
         top: 410px;
@@ -111,6 +154,7 @@
         }
       /* --------------------------- */
       /* Hover effekt på hero knapper */
+       /* --------------------------- */
       .heroButton:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
         background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
         transform: scale(1.05);  
