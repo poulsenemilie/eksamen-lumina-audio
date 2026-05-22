@@ -693,7 +693,89 @@ background-color: #efe3d9;
 /* --------------------------- */
 /* anmeldelser */
 /* --------------------------- */
-      
+  .reviews-section {
+  padding: 40px 24px 70px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.reviews-header {
+  margin-bottom: 48px;
+}
+
+.reviews-header h2 {
+  font-family: "Playfair Display";
+  font-size: 3rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 22px;
+  margin-top: 0%;
+}
+
+.reviews-score {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.score-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.score-stars {
+  font-size: 2rem;
+  line-height: 1;
+  color: #111;
+  letter-spacing: 2px;
+}
+
+.score-count {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #7d7d7d;
+}
+
+/* Review-kortene placeres i et grid med fire kolonner, så flere anmeldelser kan vises samtidig i et overskueligt layout. */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+/* Hvert review-card får kant, afrundede hjørner og indvendig padding, så anmeldelserne fremstår som separate kort. */
+.review-card {
+  background-color: #ffffff;
+  border: 1.5px solid #bdb7b2;
+  border-radius: 16px;
+  padding: 24px 24px 22px;
+}
+
+.review-card h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.review-stars {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #111;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.review-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #111;
+}
       
 /* --------------------------- */
 /* FOOTER */
