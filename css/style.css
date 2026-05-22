@@ -1,0 +1,362 @@
+      /* "*" er en universel selector = gælder for alle elementer på siden*/
+      * { 
+        margin: 0;  
+        padding: 0;
+         /*Fjerner default margin/padding på alle elementer.*/
+        box-sizing: border-box;
+      }
+
+      /*Fælles styling for alle elementer i body dvs. næsten hele koden*/
+      body {
+        font-family: 'Montserrat', sans-serif; 
+        color:rgb(77, 96, 73);
+        background-color: rgb(204, 214, 196); /* startfarve */
+      }
+/* --------------------------- */
+/* HERO SEKTIONEN */
+/* --------------------------- */
+      .hero{
+        position: relative;  /* position: relative; = Gør at logoet kan placeres ovenpå */
+        height: 100vh;
+        overflow: hidden; /* Skjuler alt der går udenfor containeren */
+
+      /* --------------------------- */
+      /* Hero billedet */
+      }
+      #heroPicture{
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;    /* object-fit: cover; = Gør billedet fylder hele området, fra cover til cover, uden at blive mast */
+        display: block;  /* Fjerner inline-block whitespace under billeder */
+      }
+      #heroFade {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 200px;
+        pointer-events: none;  /* så man stadig kan klikke igennem */
+        z-index: 1;
+        background: linear-gradient(to bottom, transparent, rgb(204, 214, 196));
+        }
+
+      /* --------------------------- */
+      /* Overskrift */
+      #luminaOne{
+        position: absolute;     /* position: abselut; = placerer logo frit ovenpå hero*/
+        top: 150px;
+        left: 7.5%; /* Midt på horisontalt */
+        font-size: 4rem;
+        letter-spacing: 12px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.952);
+        }
+      /* --------------------------- */
+      /* Hero tekst */
+      #heroSlogan{
+        position: absolute;
+        top: 245px;
+        left: 7.5%;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        line-height: 1;
+        font-weight: 100;
+        color: rgba(255, 255, 255, 0.952);
+        }
+
+      #heroText {
+        position: absolute;
+        top: 290px;
+        left: 7.5%;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        line-height: 1.7;
+        font-weight: 50;
+        color: rgba(255, 255, 255, 0.952);
+        }
+
+      #heroText2 {
+        position: absolute;
+        top: 360px;
+        left: 7.5%;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        line-height: 1.7;
+        font-weight: 100;
+        color: rgba(255, 255, 255, 0.952);
+        }
+      /* --------------------------- */
+      /* Hero knapper */
+      #topButtonGreen {
+        position: absolute;
+        top: 410px;
+        left: 7.5%;
+        margin: 10px; /* afstand til andre elementer */
+        padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        background-color: #5b924f;
+        color: rgb(206, 223, 208);;
+        border: none;
+        border-radius: 15px 15px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
+        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
+        transition: 0.3s ease;      /* Transformationen/animationen af knappen tager 3 milisekunder og "ease" er en timing function = bestemmer bevægelsens tempo-kurve*/
+        }
+
+      #topButtonWhite {
+        position: absolute;
+        top: 410px;
+        left: 23%;
+        display: block;   /* blokerer knap og gør margin auto virker */
+        margin: 10px auto; /* afstand til andre elementer */
+        padding: 20px 50px;     /* Afgør bredde og højde på former i pixels */
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        background-color: rgb(206, 223, 208);
+        color: #5b924f;
+        border: none;
+        border-radius: 15px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
+        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
+        transition: 0.3s ease;  
+        }
+      /* --------------------------- */
+      /* Hover effekt på hero knapper */
+      .heroButton:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
+        background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
+        transform: scale(1.05);  
+        }
+
+/* --------------------------- */
+/* PRODUKT SEKTIONEN MED FARVER */
+/* --------------------------- */
+      .productBrowse {
+        padding: 10px 12%; /* Laver plads omkring hele sektionen: 70px top/bund, 12% venstre/højre */
+        display: grid;
+        justify-items: center; /* Centrerer elementerne INDE i gridet */
+        gap: 50px;             /* Laver 50px mellemrum mellem rækker i grid */
+        }
+    /* --------------------------- */
+    /* Hovedbillede */
+      #productPicture {
+        width: 100%;
+        max-width: 500px;   /* Max bredde */
+        height: auto;       /* Bevarer proportioner */
+        display: block;    /* Fjerner inline-block whitespace */
+        }
+    /* --------------------------- */
+    /* Layout for colorways */
+      .productColor {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 kolonner med lige stor bredde (1 fraction hver) */
+        justify-content: center; /* Centrerer hele gridet horisontalt i containeren */
+        gap: 90px; /* Laver 90px mellem hver farveboks */
+        }
+    /* --------------------------- */
+    /* Wrapper omkring hvert billede */
+      .colorOption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px; /* fast radius */
+        background-color: transparent; /* start uden farve */
+        padding: 5px;  /* fast padding, ikke på hover */
+        }
+    /* --------------------------- */
+    /* Hover effekt på containeren */
+     .colorOption:hover {
+        background-color: rgb(204, 214, 196);  /* Baggrund bliver lys grøn/grå ved hover */
+        }
+    /* --------------------------- */
+    /* Selve farvebillederne */
+      .colorOption img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        }
+    /* --------------------------- */
+    /* Hover effekt på containeren*/
+      .colorOption:hover img {
+        transform: scale(1.3);  
+        }
+    /* --------------------------- */
+    /* Farvenavnet (skjult som standard fra start) */
+      .colorName {
+        margin-top: 12px;
+        font-size: 0.9rem;
+        font-style: italic; /* Gør teksten skråskrift */
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        color: rgb(77, 96, 73);
+        }
+    /* --------------------------- */
+    /* Vis farvenavnet ved hover */
+      .colorOption:hover .colorName {
+        opacity: 1;
+        transform: translateY(0);
+        }
+
+    /* --------------------------- */
+     /*Alt tekst sat ind i Sectioner*/
+     section {
+      padding: 50px 15%; /* Top/bund og venstre/højre padding */
+      text-align: center;  /* Centrerer al tekst i section */
+    }
+     /* --------------------------- */
+     /*Produkt tekst*/
+    #textAboutProduct p{
+      max-width: 700px;  /* Max bredde for læsbarhed */
+      font-size: 1.15rem;
+      line-height: 2;
+      margin: 0 auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+/* --------------------------- */
+/* PRODUKT FUNKTIONER SEKSIONEN */
+/* --------------------------- */
+      #featuresHeadline{
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+        margin-bottom: 35px; /* Afstand under overskrift */
+      }
+      .featuresContainer {
+        display: grid;   /* Grid container for kolonner */
+        grid-template-columns: 1fr 1fr; /* 2 kolonner */
+        gap: 20px 40px; /* 20px mellem rækker, 40px mellem kolonner */
+        max-width: 700px; /* max bredde på grid */
+        margin: 0 auto;  /* centrerer grid horisontalt */
+      }
+      .featuresContainer li {
+        display: flex;            /* gør ikonet og teksten til en linje */
+        align-items: center;      /* vertikal centering */
+        gap: 15px;                /* afstand mellem ikon og tekst */
+        background: rgba(255, 255, 255, 0.1); /* Let baggrund for gennemsigtig effekt */
+        padding: 20px 25px; /* indvendig afstand */
+        border-radius: 25px; /* afrundede hjørner */
+        font-weight: 550;
+        color: rgb(77, 96, 73); /* font farve */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* let skygge */
+        min-height: 60px;          /* ens højde på alle felter */
+      }
+      /* Ikonerne */
+      .featuresContainer li .icon {
+        font-size: 2.2rem; /* størrelse på emoji/ikon */
+      }
+
+/* --------------------------- */
+/* KØB NU KNAP */
+/* --------------------------- */  
+      /* Knappen */
+      .button {
+        display: block;   /* blokerer knap og gør margin auto virker */
+        margin: 10px auto; /* afstand til andre elementer */
+        padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
+        font-size: 1rem;
+        letter-spacing: 3px;
+        background-color: #445544;
+        color: white;
+        border: none;
+        border-radius: 55px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
+        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
+        transition: 0.3s ease;      /* Transformationen/animationen af knappen tager 3 milisekunder og "ease" er en timing function = bestemmer bevægelsens tempo-kurve*/
+      }
+      .button:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
+        background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
+        transform: scale(1.05);     /* transformere knappen ved at scalere den 1.05 gang = den bliver 5% større */
+      }
+
+/* --------------------------- */
+/* INSPO SEKTIONEN */
+/* --------------------------- */
+      #inspoHeadline{
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+      .inspoPlaces{ /* Grid layout for billederne */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 billeder pr række */
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .inspoPlaces img { /* Styling af billederne */
+        width: 100%;
+        height: 180px;           /* Ens højde */
+        object-fit: cover;       /* beskærer billedet pænt */
+        border-radius: 20px;
+        transition: 0.3s ease;   /* timing function (smooth hover animation)*/
+      }
+      .inspoPlaces img:hover {  /* bevægelses function */
+        transform: scale(1.03); /* skaleringen af funktionen */
+      }
+
+/* --------------------------- */
+/* OMKRING LUMINA SEKSIONEN */
+/* --------------------------- */
+      
+      #textAboutLumina{
+        
+        padding: 30px 60px;
+        margin: 30px auto;
+        }
+      #textAboutLumina p{
+        max-width: 700px;  /* Max bredde for læsbarhed */
+        font-size: 1.15rem;
+        line-height: 2;
+        margin: auto;
+        margin-bottom: 20px;
+        text-align: center; 
+      }
+      
+    .anmeldelserKnap {
+        display: block;   /* blokerer knap og gør margin auto virker */
+        margin: 40px auto 30px auto; /* afstand til andre elementer */
+        padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
+        font-size: 1rem;
+        font-style: italic;
+        letter-spacing: 3px;
+        background-color: #445544;
+        color: white;
+        border: none;
+        border-radius: 55px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
+        cursor: pointer;      /* Musens markør bliver til en hånd (klik-ikon), når man holder den over elementet */
+        transition: 0.3s ease;      /* Transformationen/animationen af knappen tager 3 milisekunder og "ease" er en timing function = bestemmer bevægelsens tempo-kurve*/
+      }
+      #anmeldelser-billede{
+        width: 100%;
+        height: auto;       /* Bevarer proportioner */
+        display: block;    /* Fjerner inline-block whitespace */
+       
+      }
+      .anmeldelserKnap:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
+        background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
+        transform: scale(1.05);     /* transformere knappen ved at scalere den 1.05 gang = den bliver 5% større */
+      }
+      
+/* --------------------------- */
+/* FOOTER */
+/* --------------------------- */
+/* footer boksen/farven */
+    .site-footer {
+        background-color: #99A490;
+        color: rgb(77, 96, 73);
+        padding: 16px;
+        font-size: 14px;
+        line-height: 30px;
+        }
+    /* footer tekst */
+        .footer-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        max-width: 600px; /* juster bredden */
+        margin: 0 auto;   /* centrer indholdet */
+        text-align: center; /* så kolonner står i midten */
+        }
+    
