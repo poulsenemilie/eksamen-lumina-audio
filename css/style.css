@@ -60,12 +60,13 @@ background-color: #efe3d9;
 /* --------------------------- */
 /* HERO SEKTIONEN */
 /* --------------------------- */
-      .hero{
-        position: relative;  /* position: relative; = Gør at logoet kan placeres ovenpå */
+      /* Hele hero sektionen */
+        .hero{
+        position: relative;
         height: 70vh;
         overflow: hidden; /* Skjuler alt der går udenfor containeren */
 
-      /* --------------------------- */
+      
       /* Hero billedet */
       }
       #heroPicture{
@@ -75,10 +76,10 @@ background-color: #efe3d9;
         display: block;  /* Fjerner inline-block whitespace under billeder */
       }
 
-      /* --------------------------- */
+      
       /* Overskrift */
       #luminaOne{
-        position: absolute;     /* position: abselut; = placerer logo frit ovenpå hero*/
+        position: absolute;     /* position: abselut; = placerer tekst  frit ovenpå hero*/
         top: 150px;
         left: 7.5%;
         font-size: 6rem;
@@ -86,9 +87,10 @@ background-color: #efe3d9;
         letter-spacing: 12px;
         font-weight: 500;
         color: #9c7474;
+        -webkit-text-stroke: 0.3px white;
         }
-      /* --------------------------- */
-      /* Hero tekst */
+     
+      /* Hero slogan  */
       #heroSlogan{
         position: absolute;
         top: 245px;
@@ -96,9 +98,9 @@ background-color: #efe3d9;
         font-family: "Playfair Display";
         font-size: 2rem;
         font-weight: 500;
-        margin-top: 60px;
+        margin-top: 70px;
         }
-
+      /* Hero tekst */
       #heroText {
         position: absolute;
         top: 290px;
@@ -112,9 +114,9 @@ background-color: #efe3d9;
         margin-top: 70px;
         }
       /* --------------------------- */
-      /* Hero knapper */
+      /* Hero knappen */
        /* --------------------------- */
-      #topButtonGreen {
+      #topButton {
         position: absolute;
         top: 410px;
         left: 7.5%;
@@ -133,33 +135,35 @@ background-color: #efe3d9;
         }
 
  
-      /* --------------------------- */
-      /* Hover effekt på hero knapper */
-       /* --------------------------- */
+      /* hoover effekt på knappen */
       .heroButton:hover {               /* giver kanppen bevægelse "hover" når mussen bevæger sig over den */
         background-color: #2f3d2f;  /* Når knappen bevæger sig ændres baggrundsfarven */
         transform: scale(1.05);  
         }
 
+/* --------------------------- */
+/* INFO SEKTION MED OVERSKRIFT OG BRØDTESKT */
+/* --------------------------- */
+
 .info-section {
   background-color: #efe3d9;
-  text-align: center;
+  text-align: center; /* Centrerer overskrift og tekst i sektionen. */
 }
 
 .info-section h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   font-weight: 500;
-  margin-top: 2%;
+  margin-top: 2%;/* Skaber lidt luft over overskriften. */
 }
 
 .info-text {
-  max-width: 760px;
+  max-width: 760px; /* Begrænser tekstens bredde, så linjerne ikke bliver for lange. */
   font-size: 0.9rem;
   line-height: 1.7;
-  margin-left: 22%;
-  margin-top: 1%;
-  margin-bottom: 3%;
+  margin-left: 22%; /* Flytter teksten ind mod midten. */
+  margin-top: 1%; /* Skaber luft mellem overskrift og tekst. */
+  margin-bottom: 3%;  /* Skaber luft under teksten før næste sektion. */
 }
 /* --------------------------- */
 /* PRODUKT FUNKTIONER SEKSIONEN */
@@ -197,347 +201,257 @@ background-color: #efe3d9;
 /* --------------------------- */
 /* PRODUKT SEKTIONEN */
 /* --------------------------- */
-      /* Denne regel bygger produktsektionen som et todelt grid med galleri til venstre og produktinformation til højre. */
-.product-showcase {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 40px;
-  padding: 60px 40px;
+    .container {
+    max-width: 1120px;
+    margin: 50px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: start;
 }
 
-/* Her stables hovedbilledet og thumbnails lodret og centreres som én samlet billedkolonne. */
-.product-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Billedeområde */
+.carousel-container {
+    width: 100%;
 }
 
-/* Denne wrapper holder det store produktbillede og pilene samlet i et fast billedområde med skjult overflow. */
-.main-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 520px;
-  overflow: hidden;
-  background: #f4e8df;
+.main-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* Her får hovedbilledet fuld bredde og højde, mens object-fit sørger for at det fylder pænt uden at forvrænges. */
-.main-product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.main-image img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
 }
 
-/* Disse regler placerer pilene oven på billedet og gør dem klikbare som navigation i galleriet. */
+/* Pile */
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  font-size: 2rem;
-  color: #111;
-  cursor: pointer;
-  line-height: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #111;
+    font-size: 54px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 200;
 }
 
-.arrow-left {
-  left: 10px;
+.arrow.left {
+    left: 10px;
 }
 
-.arrow-right {
-  right: 10px;
+.arrow.right {
+    right: 10px;
 }
 
-/* Thumbnail-rækken bruger flexbox til at vise de små produktbilleder på en centreret vandret linje. */
-.thumbnail-row {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 22px;
+.arrow:hover {
+    color: #b98282;
 }
 
-/* Hver thumbnail får en fast størrelse og fungerer som klikbart valg af hvilket billede der skal vises stort. */
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    gap: 24px;
+    margin-top: 14px;
+    justify-content: center;
+}
+
 .thumbnail {
-  width: 110px;
-  height: 120px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-  padding: 4px;
-}
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 105px;
+    height: 95px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: #f6ebe7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thumbnail.active {
-  border-color: #111;
+    border-color: #111;
 }
 
-/* Her styles produktnavnet, så det fremstår som den vigtigste overskrift i købskortet. */
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Produktinfo */
 .product-info {
-  text-align: left;
-  align-self: start;
-  padding-left: 20px;
-}
-.product-info h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 4rem;
-  font-weight: 400;
-  color: #a57c7c;
-  margin-bottom: 20px;
+    padding-top: 2px;
 }
 
-.price {
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 16px;
+.product-info h1 {
+    margin:0 0 0 6px;
+    font-size: 48px;
+    font-weight: 300;
+    font-family: "playfair display";
+    letter-spacing: 2px;
+    color: #9e6f6f;
+    margin-top: 5%;
 }
 
-.rating {
-  font-size: 1rem;
-  line-height: 1;
-  margin-bottom: 44px;
+#productDescription {
+    display: none;
+     font-family: "inter";
 }
 
-.rating span {
-  font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
-  color: #777;
-  vertical-align: middle;
+.product-info p {
+    margin: 0;
+     font-family: "inter";
 }
 
-.color-title {
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 26px;
+.product-info p:has(#productPrice) {
+    margin-bottom: 18px;
+    font-size: 0;
+
 }
 
-.color-title span {
-  font-weight: 500;
+.product-info p:has(#productPrice) strong {
+    display: none;
 }
 
-/* Denne regel fjerner standardstyling fra fieldset og arrangerer farveknapperne på en vandret række. */
-.color-options {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-  margin: 0 0 56px 0;
+#productPrice {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+     font-family: "inter";
 }
 
-.color-title {
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0;
+.variant-selector {
+    margin-bottom: 34px;
 }
 
-.color-dots {
-  display: flex;
-  gap: 18px;
-  align-items: center;
+.variant-selector label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+     font-family: "inter";
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-/* Hver farveknap styles som en cirkel, og den aktive variant markeres med en tydelig kant. */
-.color-dot {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  cursor: pointer;
+.variant-selector label::after {
+    content: ":";
 }
 
-.color-dot.active {
-  border-color: #111;
+#variant {
+    width: 220px;
+    padding: 12px 14px;
+    border: 1px solid #cfc7c3;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.stock {
-  font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
-  margin-bottom: 34px;
+.quantity-selector::before {
+    font-weight: 400;
 }
 
-/* Her placeres antalvælger og købsknap ved siden af hinanden som de vigtigste handlinger i produktkortet. */
-.purchase-row {
-  display: flex;
-  gap: 24px;
-  align-items: center;
+.quantity-selector label {
+    display: none;
 }
 
-/* Denne boks holder minusknap, antal og plusknap samlet og giver dem et tydeligt afgrænset input-lignende udtryk. */
-.quantity-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 200px;
-  height: 78px;
-  border: 1px solid #cfcfcf;
-  border-radius: 14px;
-  padding: 0 26px;
-  background: #fff;
+/* Antal + knap på samme linje */
+.quantity-selector {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
 }
 
-.quantity-box button {
-  border: none;
-  background: transparent;
-  font-size: 3rem;
-  color: #8b8b8b;
-  cursor: pointer;
+#quantity {
+    width: 172px;
+    height: 68px;
+    border: 1px solid #c9c9c9;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 24px;
 }
 
-.quantity-box span {
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
+#addToCart {
+    width: 267px;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    background: #bc8284;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+     font-family: "inter";
+    cursor: pointer;
+    vertical-align: middle;
+}
+#addToCart, .quantity-selector {
+  margin-bottom: 5%;
 }
 
-/* Købsknappen får en markant baggrundsfarve, størrelse og typografi, så den bliver den tydeligste call-to-action i sektionen. */
-.add-to-cart {
-  height: 78px;
-  min-width: 280px;
-  border: none;
-  border-radius: 14px;
-  background: #ba8888;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  cursor: pointer;
+#addToCart:hover {
+    background: #a96f71;
 }
 
-
-/* Overlayet dækker hele skærmen med en mørk gennemsigtig baggrund, så popupen træder tydeligt frem oven på siden. */
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.28);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+#addToCart:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-/* Når active-klassen tilføjes med JavaScript, bliver overlayet synligt og centrerer popupen på skærmen. */
-.cart-overlay.active {
-  display: flex;
+/* Besked */
+.hidden {
+    display: none;
 }
 
-/* Selve popup-boksen styles her med lys baggrund, afrundede hjørner, skygge og centreret indhold. */
-.cart-popup {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  background: #f7ebe3;
-  border-radius: 22px;
-  padding: 34px 40px 36px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-}
-
-.close-popup {
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  border: none;
-  background: transparent;
-  font-size: 2.6rem;
-  line-height: 1;
-  cursor: pointer;
-  color: #111;
-}
-
-/* Denne cirkel fungerer som et visuelt succesikon, der understøtter beskeden om at varen er lagt i kurven. */
-.popup-check {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 24px;
-  border: 3px solid #b79292;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: #b79292;
-}
-
-.cart-popup h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 4rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.cart-popup p {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 34px;
-  color: #111;
-}
-
-.popup-cart-btn {
-  display: inline-block;
-  background: #b88a8a;
-  color: #fff;
-  padding: 18px 46px;
-  border-radius: 14px;
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 26px;
-}
-
-.continue-shopping {
-  display: block;
-  margin: 0 auto;
-  border: none;
-  background: transparent;
-  color: #b08e8e;
-  text-decoration: underline;
-  font-family: "Inter", sans-serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  cursor: pointer;
+.toast {
+    margin: 10%;
+    padding: 20px 16px;
+    background: #a96f71;
+    color: #111;
+    border-radius: 4px;
+    font-weight: 600;
+    
 }
 
 /* --------------------------- */
-/* Specifikationer og app section */
+/* SPECIFIKATIONER OG APP SEKTION */
 /* --------------------------- */
+/*  hele specifikationer boksen */
 .spec-app-section {
-  display: grid;
-  grid-template-columns: 37% 63%;
-  gap: 24px;
-  padding: 0px 24px 20px;
-  align-items: stretch;
+  display: grid; /* Deler sektionen op i kolonner. */
+  grid-template-columns: 37% 63%; /* Gør specifikationsboksen smallere end app-boksen. */
+  gap: 24px; /* Skaber afstand mellem de to bokse. */
+  padding: 0px 24px 20px; /* Skaber luft omkring sektionen. */
+  align-items: stretch; /* Får boksene til at strække sig til samme højde. */
   background-color: #efe3d9;
   height: 100%;
-  min-height: 361px;
-  box-sizing: border-box;
+  min-height: 361px; /* Sikrer en minimumshøjde på sektionen. */
+  box-sizing: border-box; /* Sørger for at padding tælles med i størrelsen. */
 }
-
+/* begge bokse */
 .spec-box,
 .app-box {
   background-color: white;
   border-radius: 18px;
-  text-align: left;
+  text-align: left; /* Sørger for at teksten starter fra venstre. */
   margin-top: 4%;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Gør størrelsesberegning nemmere og mere stabil. */
 }
 
+/* kun specifikationer boksen*/
 .spec-box {
   padding: 30px 30px 34px;
 }
-
+/* overskriften i specifikationer boksen */
 .spec-box h2 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
@@ -546,12 +460,12 @@ background-color: #efe3d9;
   margin-bottom: 28px;
 }
 
-/* Hvert details-element får en bundlinje og luft, så specifikationerne fremstår som en ryddelig fold-ud-liste. */
+/* teksten der er i specifikationer når man folder den ud */
 .spec-box details {
   border-bottom: 1px solid #9a9a9a;
   padding: 12px 0;
 }
-
+/* de små overskfrifter i specifikationer man kan folde ud  */
 .spec-box summary {
   list-style: none;
   cursor: pointer;
@@ -564,7 +478,7 @@ background-color: #efe3d9;
 }
 
 .spec-box summary::-webkit-details-marker {
-  display: none;
+  display: none; /* Fjerner browserens standard-pil ved <summary>, så vi kan bruge vores eget plus/kryds-ikon med CSS. */
 }
 
 /* Denne pseudo-selector indsætter plus-tegnet visuelt, så brugeren kan se at punktet kan åbnes og lukkes. */
@@ -580,14 +494,15 @@ background-color: #efe3d9;
   line-height: 1;
 }
 
+/* når man skal lukke deltaljerne */
 .spec-box details[open] summary::after {
   content: "×";
 }
-
+/* paragraffen når man åbner et detaljeelement */
 .spec-box details p {
   margin-top: 16px;
   max-width: 95%;
-  font-family: "Inter", sans-serif;
+  font-family:  sans-serif;
   font-size: 0.98rem;
   line-height: 1.7;
   color: #222;
@@ -604,11 +519,11 @@ background-color: #efe3d9;
   min-height: 361px;
   box-sizing: border-box;
 }
-
+/* begge tekster i app boksen */
 .app-text {
-  max-width: 520px;
+  max-width: 520px; /* Begrænser tekstens bredde, så den er nemmere at læse. */
 }
-
+/* overskriften i app boksen */
 .app-text h3 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
@@ -617,9 +532,9 @@ background-color: #efe3d9;
   color: #111;
   margin-bottom: 24px;
 }
-
+/* paragraffen i tekstboksen */
 .app-text p {
-  font-family: "Inter", sans-serif;
+  font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #222;
@@ -639,7 +554,7 @@ background-color: #efe3d9;
   width: auto;
   display: block;
 }
-
+/* billedet af telefonen der viser appen */
 .app-image img {
   width: 140px;
   max-width: 100%;
@@ -650,11 +565,16 @@ background-color: #efe3d9;
 /* --------------------------- */
 /* INSPO SEKTIONEN */
 /* --------------------------- */
-
+      /* overskriften over billederne */
       #inspoHeadline{
         font-size: 2rem;
         margin-bottom: 40px;
+        text-align: center; /* Centrerer overskrift og tekst i sektionen. */
+        margin-top: 2%;  /* giver lidt luft ovenover overskriften */
+
       }
+
+      /* grid med billederne */
       .inspoPlaces{ /* Grid layout for billederne */
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 billeder pr række */
@@ -663,6 +583,8 @@ background-color: #efe3d9;
         margin: 0 auto; /* Får den til at stå i midten */
         margin-bottom: 5%; /* gør at det er luft forneden*/
       }
+
+      /* selve billederne */
       .inspoPlaces img { /* Styling af billederne */
         width: 100%;
         height: 180px;           /* Ens højde */
@@ -670,22 +592,24 @@ background-color: #efe3d9;
         border-radius: 20px;
         transition: 0.3s ease;   /* timing function (smooth hover animation)*/
       }
+      /* så billederne hopper lidt når man holder musen hen over */
       .inspoPlaces img:hover {  /* bevægelses function */
         transform: scale(1.03); /* skaleringen af funktionen */
       }
 /* --------------------------- */
-/* anmeldelser */
+/* ANMELDELSER */
 /* --------------------------- */
-  .reviews-section {
+/* anmeldelser sektionen */  
+.reviews-section {
   padding: 40px 24px 70px;
   background-color: #ffffff;
-  text-align: left;
+  text-align: left; /* Sørger for at teksten står fra venstre. */
 }
-
+/* overskriften i anmeldelser samt lille tekst og stjerner under */
 .reviews-header {
   margin-bottom: 48px;
 }
-
+/* overskriften i anmeldelser */
 .reviews-header h2 {
   font-family: "Playfair Display";
   font-size: 3rem;
@@ -694,28 +618,28 @@ background-color: #efe3d9;
   margin-bottom: 22px;
   margin-top: 0%;
 }
-
+/* lille tekst og stjerner under overskriften */
 .reviews-score {
   display: flex;
   align-items: center;
   gap: 18px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Gør at elementerne kan hoppe ned på ny linje på små skærme. */
 }
-
+/* selve den lille tekst ved siden af stjerne */
 .score-text {
-  font-family: "Inter", sans-serif;
+  font-family: sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: #111;
 }
-
+/* stjernerne */
 .score-stars {
   font-size: 2rem;
   line-height: 1;
   color: #111;
   letter-spacing: 2px;
 }
-
+/* hvor mange anmeldelser der er (128) */
 .score-count {
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
@@ -736,15 +660,15 @@ background-color: #efe3d9;
   border-radius: 16px;
   padding: 24px 24px 22px;
 }
-
+/* navnet i hver anmeldelser f.eks. Sofie L. */
 .review-card h3 {
-  font-family: "Inter", sans-serif;
+  font-family: sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 8px;
 }
-
+/* de små stjerne i hver anmeldelse */
 .review-stars {
   font-size: 1.5rem;
   line-height: 1;
@@ -752,7 +676,7 @@ background-color: #efe3d9;
   margin-bottom: 18px;
   letter-spacing: 1px;
 }
-
+/* selve den lille tekst i hvert anmeldelse */
 .review-card p {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
@@ -763,53 +687,278 @@ background-color: #efe3d9;
 /* --------------------------- */
 /* FOOTER */
 /* --------------------------- */
+/* hele footeren */
 .site-footer {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 0.9fr;
-  gap: 70px;
+  display: grid; /* Deler footeren op i kolonner. */
+  grid-template-columns: 1.4fr 1fr 1fr 0.9fr; /* Giver logo-området mest plads og sociale medier lidt mindre. */
+  gap: 70px;  /* Skaber afstand mellem footerens kolonner. */
   background-color: #f4ece6;
   padding: 50px 55px;
   color: #1f1f1f;
   font-family: sans-serif;
 }
-
+/* logo i footeren */
 .footer-logo {
   width: 200px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto 20px;
+  max-width: 100%; /* Sørger for at logoet ikke bliver bredere end sin container. */
+  display: block;  /* Gør logoet til et block-element så det ikke har en linje for sig */
+  margin: 0 auto 20px; /* Centrerer logoet og giver luft under det. */
 }
-
+ /* lille tekst under logo */
 .footer-description {
   max-width: 520px;
   font-size: 0.8rem;
   line-height: 1.6;
   margin: 0;
 }
-
+/* overskfterne i footeren*/
 .footer-column h3,
 .footer-social h3 {
   font-size: 1.1rem;
   font-weight: 800;
   margin: 0 0 8px;
 }
-
+/* de små sider under overskrifterne man ellers ville kunne trykke på, her er det bare tekst fordi de ikke er lavet alligevel*/
 .footer-column p {
   font-size: 1rem;
   margin: 0 0 18px;
 }
-
+/* facebook, insagram og tiktok logeerne ift. placering */
 .social-icons {
-  display: flex;
+  display: flex; /* Placerer ikonerne på en vandret række. */
   gap: 34px;
-  align-items: center;
+  align-items: center; /* Centrerer ikonerne lodret. */
   margin-top: 55px;
 }
-
+/* selve billederne af logoerne */
 .social-icons img {
   width: 64px;
   height: 64px;
-  object-fit: contain;
+  object-fit: contain; 
   display: block;
 }
     
+/* --------------------------- */
+/* RESPONSIVE - TABLET */
+/* --------------------------- */
+@media (max-width: 900px) {
+  .navbar {
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-links {
+    gap: 35px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    width: 100px;
+    margin-left: 20px;
+  }
+
+  .bag-icon img {
+    margin-right: 20px;
+  }
+
+  #luminaOne {
+    font-size: 4rem;
+    top: 120px;
+    letter-spacing: 8px;
+  }
+
+  #heroSlogan {
+    font-size: 1.6rem;
+    top: 210px;
+  }
+
+  #heroText {
+    font-size: 1rem;
+    top: 255px;
+    max-width: 400px;
+  }
+
+  #topButtonGreen {
+    top: 380px;
+    padding: 18px 55px;
+  }
+
+  .info-text {
+    margin: 1% auto 4%;
+    padding: 0 24px;
+  }
+
+  .featuresContainer {
+    grid-template-columns: repeat(2, 300px);
+  }
+
+  .product-showcase {
+    grid-template-columns: 1fr;
+    padding: 50px 30px;
+  }
+
+  .product-info {
+    padding-left: 0;
+  }
+
+  .spec-app-section {
+    grid-template-columns: 1fr;
+  }
+
+  .app-box {
+    margin-right: 0;
+  }
+
+  .inspoPlaces {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 24px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* --------------------------- */
+/* RESPONSIVE - MOBIL */
+/* --------------------------- */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .logo img {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .bag-icon img {
+    margin-right: 0;
+  }
+
+  .hero,
+  #heroPicture {
+    height: 75vh;
+  }
+
+  #luminaOne {
+    font-size: 2.8rem;
+    top: 100px;
+    left: 6%;
+    letter-spacing: 5px;
+  }
+
+  #heroSlogan {
+    font-size: 1.4rem;
+    top: 185px;
+    left: 6%;
+  }
+
+  #heroText {
+    font-size: 0.95rem;
+    top: 235px;
+    left: 6%;
+    max-width: 330px;
+  }
+
+  #topButtonGreen {
+    top: 390px;
+    left: 6%;
+    padding: 16px 45px;
+  }
+
+  .info-section h2 {
+    font-size: 2rem;
+    padding: 0 20px;
+  }
+
+  .featuresContainer {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+
+  .product-showcase {
+    padding: 40px 20px;
+  }
+
+  .main-image-wrapper {
+    height: 360px;
+  }
+
+  .thumbnail-row {
+    gap: 10px;
+  }
+
+  .thumbnail {
+    width: 75px;
+    height: 90px;
+  }
+
+  .product-info h2 {
+    font-size: 3rem;
+  }
+
+  .purchase-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quantity-box,
+  .add-to-cart {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .app-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .store-buttons img {
+    height: 44px;
+  }
+
+  .inspoPlaces {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-header h2 {
+    font-size: 2.3rem;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 24px;
+  }
+
+  .footer-logo {
+    margin: 0 0 20px;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+  }
+}

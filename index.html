@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuminaAudio</title>
-
+    <title>LuminaAudio</title> <!-- Titlen vises i browserens fane. -->
+    <link rel="icon" type="image/png" href="img/LUMINA-Audio-Logo.png">   <!-- Viser logo som favicon i browserfanen. -->
     <link rel="stylesheet"
     href="css/style.css">
     
 </head>
 <body>
-<header class="navbar">
-        <div class="logo">
-          <a href="#">
+<!-- ...... -->
+<!-- NAVBAR -->
+<!-- .......-->
+
+<header class="navbar"> <!-- Headeren her bruges som topmenu/navigation. -->
+        <div class="logo"> <!-- Logo-området i venstre side af navigationen. -->
+          <a href="#"> <!-- Link omkring logoet. # betyder, at det ikke fører til en rigtig side endnu. -->
             <img src="img/LUMINA-Audio-Logo.png" alt="LUMINA Audio logo">
           </a>
         </div>
@@ -25,32 +29,37 @@
           <a href="#">Support</a>
         </nav>
 
-        <a href="#" class="bag-icon">
+        <a href="#" class="bag-icon"> <!-- Kurv-ikonet fungerer som et klikbart element. -->
           <img src="img/shopping-bag1.png">
         </a>
       </header>
-
+<!-- ...... -->
+<!-- HERO  -->
+<!-- .......-->
     <header class="hero">
         <h1 id="luminaOne">LUMINA ONE</h1>
         <h2 id="heroSlogan">Når lyd bliver en stemning.</h2>
         <p id="heroText">En bærbar Bluetooth-højtaler skabt til stærke øjeblikke, smuk musik og endnu bedre selskab.</p>
-        <a href="#produktoversigt" class="heroButton" id="topButtonGreen" >KØB NU</a>
+        <a href="#produktoversigt" class="heroButton" id="topButton" >KØB NU</a>  <!-- Link-knap der scroller ned til sektionen med id="produktoversigt". -->
 
-        <img src="img/hero-bagground.png" alt="Lumina Speaker by pool" id="heroPicture">
+        <img src="img/hero-bagground.png" alt="Lumina Speaker by pool" id="heroPicture"> <!-- Hero-billedet ligger inde i samme sektion og styles som baggrundslignende billede med CSS. -->
     </header>
 
-    <section class="info-section" aria-labelledby="info-heading">
+    <section class="info-section">     <!-- section bruges til en samlet indholdsblok. -->
       <h2 id="info-heading">Skabt til at blive en del af dit liv</h2>
       <p class="info-text">
         LUMINA One er en bærbar højtaler skabt til sociale øjeblikke. Den
         kombinerer kraftfuld lyd med et nordisk, æstetisk design, der passer
         naturligt ind i både hjemmet og udendørslivet.
-      </p>
+      </p> 
+      </section>
 
-<!-- Funktioner -->
+<!-- ...... -->
+<!-- FUNKTIONER  -->
+<!-- .......-->
     <section class="features">
-      <ul class="featuresContainer"> 
-        <li><span class="icon">💧</span> IPX5 VANDAFVISENDE</li>
+      <ul class="featuresContainer">    <!-- ul bruges til en liste af funktioner. Hver li er ét punkt i listen. -->
+        <li><span class="icon">💧</span> VANDAFVISENDE DESIGN</li>
         <li><span class="icon">⚖️</span>LET & BÆRBAR - 3 KG</li>
         <li><span class="icon">🔊</span>KRAFTIG LYD - OP TIL 100DB</li>
         <li><span class="icon">⚡</span>LANG BATTERITID - 18 TIMER</li>
@@ -61,83 +70,52 @@
         <!-- <span> er en inline container, altså et element der ikke bryder linjen som <div> gør. Gør at jeg kan style ikonet uden at påvirke teksten-->
       </ul>
     </section>
+   
+<!-- ...... -->
+<!-- PRODUKTKORT  -->
+<!-- .......-->
 
-
-<!-- Denne sektion bygger produktkortet, hvor brugeren kan se billeder, skifte mellem produktfotos, vælge farve, justere antal og lægge varen i kurven. -->
-    <section id="produktoversigt" class="product-showcase" aria-labelledby="product-heading">
-      <div class="product-gallery">
-        <div class="main-image-wrapper">
-          <button class="arrow arrow-left" id="prevImage" type="button" aria-label="Forrige billede">
-            &#8592;
-          </button>
-
-          <img
-            id="mainProductImage"
-            src="img/dusty-rose-1.png"
-            alt="LUMINA One i Dusty Rose"
-            class="main-product-image"
-          >
-
-          <button class="arrow arrow-right" id="nextImage" type="button" aria-label="Næste billede">
-            &#8594;
-          </button>
+<div class="container">
+        <div class="carousel-container">
+            <div class="main-image">
+                <button class="arrow left">&#8249;</button>
+                <img id="mainImage" src="" alt="Product">
+                <button class="arrow right">&#8250;</button>
+            </div>
+            <div class="thumbnails" id="thumbnails"></div>
         </div>
 
-<!-- button bruges nedenunder i stedet for bare et billede, fordi thumbnailen er et interaktivt element man kan klikke på. -->
+        <div class="product-info">
+            <h1 id="productName">LUMINA One</h1>
+            <p id="productDescription">LUMINA One er en bærbar højttaler skabt til sociale øjeblikke. 
+              Den kombinerer kraftfuld lyd med et nordisk, æstetisk design, 
+              der passer naturligt ind i både hjemmet og udendørslivet.</p>
+            <p><strong>Pris:</strong> DKK<span id="productPrice"> 1499.00</span></p>
 
-        <div class="thumbnail-row" id="thumbnailRow" aria-label="Produktbilleder"></div>
+            <div class="variant-selector">
+                <label for="variant">Vælg farve</label>
+                <select id="variant">
+                    <option value="dustyRose">Dusty Rose</option>
+                    <option value="sageGreen">Sage Green</option>
+                    <option value="lavenderMist">Lavender Mist</option>
+                    <option value="moonlightWhite">Moonlight White</option>
+                </select>
+            </div>
+
+            <div class="quantity-selector">
+                <label for="quantity">Antal</label>
+                <input type="number" id="quantity" min="1" value="1">
+            </div>
+
+            <button id="addToCart">Læg i kurv</button>
+            <p id="confirmationMessage" class="hidden">Produkt tilføjet til kurv</p>
         </div>
-
-<!-- article bruges til produktinformationen, fordi denne del fungerer som en selvstændig informationsblok om varen. -->
-      <article class="product-info">
-        <h2 id="product-heading">LUMINA One</h2>
-        <p class="price">1.499,00 kr.</p>
-        <p class="rating" aria-label="Bedømmelse 4,8 ud af 5 stjerner">★★★★★ <span>(128)</span></p>
-
-      <div class="color-options">
-      <p class="color-title">
-        VÆLG FARVE: <span id="selectedColorName">DUSTY ROSE</span>
-      </p>
-
-      <div class="color-dots">
-    <button class="color-dot active" type="button" data-color="dustyRose" style="background-color: #b7877d;" aria-label="Dusty Rose"></button>
-    <button class="color-dot" type="button" data-color="sageGreen" style="background-color: #9b9270;" aria-label="Sage Green"></button>
-    <button class="color-dot" type="button" data-color="moonlightWhite" style="background-color: #d8c5ba;" aria-label="Moonlight White"></button>
-    <button class="color-dot" type="button" data-color="lavenderMist" style="background-color: #c2a2cf;" aria-label="Lavender Mist"></button>
-    </div>
     </div>
 
-        <p class="stock"><strong>På lager</strong> - Levering 1-2 hverdage</p>
+<!-- ...... -->
+<!-- SPECIFIKATIONER  -->
+<!-- .......-->
 
-<!-- denne div samler de interaktive købselementer: antalvælger og knappen til at lægge varen i kurven. -->
-        <div class="purchase-row">
-          <div class="quantity-box" aria-label="Vælg antal"> <!-- quantity-box er en wrapper omkring minusknap, antal og plusknap, så brugeren kan ændre hvor mange produkter der skal købes. -->
-            <button id="decreaseQty" type="button" aria-label="Fjern en">-</button>
-            <output id="quantity" aria-live="polite">1</output> <!-- output bruges til at vise det aktuelle antal, fordi værdien ændres dynamisk når brugeren trykker på plus eller minus. -->
-            <button id="increaseQty" type="button" aria-label="Tilføj en">+</button>
-          </div>
-
-          <button class="add-to-cart" id="addToCartBtn" type="button">Læg i kurv</button>
-        </div>
-      </article>
-    </section>
-<!-- denne div fungerer som et overlay over siden og bruges til at vise popup-vinduet når et produkt bliver lagt i kurven. -->
-    <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-      <div class="cart-popup">
-        <button class="close-popup" id="closePopup" type="button" aria-label="Luk popup">&times;</button>
-
-        <div class="popup-check" aria-hidden="true">
-          ✓
-        </div>
-
-        <h2 id="cart-title">Lagt i kurv</h2>
-        <p>LUMINA One er nu lagt i kurv</p>
-
-        <a href="#" class="popup-cart-btn">Se kurv (<span id="cartCount">1</span>)</a>
-        <button class="continue-shopping" id="continueShopping" type="button">Fortsæt med at handle</button>
-      </div>
-    </div>
-   <!-- Specifikationer -->
       <section class="spec-app-section" aria-labelledby="spec-heading">
       <div class="spec-box">
         <h2 id="spec-heading">Specifikationer</h2>
@@ -185,7 +163,9 @@
       </div>
 
 
-    <!-- app boks -->
+<!-- ...... -->
+<!-- APPBOKS  -->
+<!-- .......-->
 
      <article class="app-box" aria-labelledby="app-heading"> 
         <div class="app-text">
@@ -212,7 +192,10 @@
       </article>
     </section>
 
-    <!-- Inspo sektionen -->
+<!-- ...... -->
+<!-- INSPO SEKTION  -->
+<!-- .......-->
+
     <section class="inspo">
       <h2 id="inspoHeadline">Tag din LUMINA One med overalt</h2>
 
@@ -222,17 +205,20 @@
         <img src="img/lifestyle-3.png" alt="Lumina Speaker">
         <img src="img/lifestyle-4.png" alt="Lumina Speaker">
         <img src="img/lifestyle-5.png" alt="Lumina Speaker">
-        <img src="img/luminagreen1.png" alt="Lumina Speaker">
+        <img src="img/lifestyle-6.png" alt="Lumina Speaker">
       </figure>
     </section>
 
-<!-- Anmeldelser-->
+<!-- ...... -->
+<!-- ANMELDELSER  -->
+<!-- .......-->
+
   <section class="reviews-section" aria-labelledby="reviews-heading">
       <div class="reviews-header">  <!-- denne div fungerer som et grid, der holder alle anmeldelseskort samlet i et ensartet layout. -->
         <h2 id="reviews-heading">Elsket af vores kunder</h2>
 
         <p class="reviews-score" aria-label="Bedømmelse 4,8 ud af 5 stjerner">
-          <span class="score-text">4.8 ud af 5</span>
+          <span class="score-text">4.8 ud af 5</span> <!-- der er er brugt span her og under så jeg kan style hvert lille element hver for sig, men stadig have dem på samme linje  -->
           <span class="score-stars">★★★★★</span>
           <span class="score-count">(128)</span>
         </p>
@@ -277,7 +263,9 @@
       </div>
     </section>
 
-    <!-- Footer -->
+<!-- ...... -->
+<!-- FOOTER  -->
+<!-- .......-->
     <footer class="site-footer">
   <div class="footer-brand">
     <img class="footer-logo" src="img/lumina-audio-logo.png" alt="LUMINA Audio">
