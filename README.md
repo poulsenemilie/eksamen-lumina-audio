@@ -23,6 +23,7 @@ Jeg har brugt denne hjemmeside til at validere min html som kan ses nedenfor er 
 ![Validering af css](img/validering-html.png)
 
 
+## JavaScript datastruktur
 
 I projektet arbejder jeg med produktdata i JavaScript ved hjælp af et objekt kaldet product. Objektet indeholder forskellige typer data, som bruges til at vise information om produktet LUMINA One på landingpagen.
 
@@ -33,4 +34,40 @@ Arrayet images består af tekst (strings), som indeholder filstier til produktet
 Arrayet variants indeholder objekter, hvor hvert objekt repræsenterer en produktvariant. Hvert objekt har en property kaldet name, som angiver farven på den pågældende variant, eksempelvis "Dusty Rose" eller "Sage Green".
 
 Denne datastruktur passer godt til projektet, fordi den samler alle relevante oplysninger om produktet ét sted. Ved at bruge arrays kan der nemt tilføjes flere billeder eller produktvarianter uden at ændre den øvrige kode. Samtidig gør objekter det muligt at organisere data på en logisk og overskuelig måde, hvilket gør koden mere vedligeholdelsesvenlig og skalerbar.
+
+### Koden kan ses her nedenunder:
+
+```javascript
+const product = {
+    name: 'LUMINA One',
+    description: 'LUMINA One er en bærbar højttaler skabt til sociale øjeblikke. Den kombinerer kraftfuld lyd med et nordisk, æstetisk design, der passer naturligt ind i både hjemmet og udendørslivet.',
+    price: " 1499.00",
+     // Et array med stier til produktbillederne.
+    images: [
+        'img/dusty-rose-1.png',
+        'img/sage-green-1.png',
+        'img/moonlight-white-1.png',
+        'img/lavender-mist-1.png'
+    ],
+     // Et array med produktets forskellige varianter/farver.
+    variants: [
+        {
+            name: 'Dusty Rose'
+        },
+        {
+            name: 'Sage Green'
+        },
+        {
+            name: 'Moonlight White'
+        },
+        {
+            name: 'Lavender Mist'
+        }
+    ]
+};
+```
+### Hvad gør koden?
+JavaScript bruger dataene fra product-objektet til dynamisk at opdatere HTML-elementer på siden. Det betyder, at produktnavn, beskrivelse, pris, billeder og farvevalg kan indsættes eller ændres automatisk uden at redigere HTML-koden manuelt.
+
+Koden er vigtig, fordi den gør landingpagen dynamisk og lettere at vedligeholde. Alle produktdata er samlet ét sted, hvilket gør det nemt at opdatere produktinformation, tilføje nye billeder eller oprette flere varianter. Samtidig forbedrer det brugeroplevelsen ved at gøre siden mere interaktiv og fleksibel.
 
