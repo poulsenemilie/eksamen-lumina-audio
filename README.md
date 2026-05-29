@@ -23,7 +23,7 @@ Jeg har brugt denne hjemmeside til at validere min html som kan ses nedenfor er 
 ![Validering af css](img/validering-html.png)
 
 
-## JavaScript datastruktur
+## JavaScript datastruktur og kode
 
 I projektet arbejder jeg med produktdata i JavaScript ved hjælp af et objekt kaldet product. Objektet indeholder forskellige typer data, som bruges til at vise information om produktet LUMINA One på landingpagen.
 
