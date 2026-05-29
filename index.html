@@ -30,7 +30,7 @@
         </nav>
 
         <a href="#" class="bag-icon"> <!-- Kurv-ikonet fungerer som et klikbart element. -->
-          <img src="img/shopping-bag1.png">
+          <img src="img/icons/shopping-bag1.png" alt=" shopping bag">
         </a>
       </header>
 <!-- ...... -->
@@ -57,7 +57,7 @@
 <!-- ...... -->
 <!-- FUNKTIONER  -->
 <!-- .......-->
-    <section class="features" id="produktoversigt">
+    <section class="features" id="produktoversigt"> <!--den har fået dette id fordi der her det giver meningen starter når man trykker på køb nu for at have den bedste visning af produktoversigt -->
       <ul class="featuresContainer">    <!-- ul bruges til en liste af funktioner. Hver li er ét punkt i listen. -->
         <li><span class="icon">💧</span> VANDAFVISENDE DESIGN</li>
         <li><span class="icon">⚖️</span>LET & BÆRBAR - 3 KG</li>
@@ -79,7 +79,7 @@
         <div class="carousel-container">
             <div class="main-image">
                 <button class="arrow left">&#8249;</button>
-                <img id="mainImage" src="" alt="Product">
+                <img id="mainImage" src="img/dusty-rose-1.png" alt="Product">
                 <button class="arrow right">&#8250;</button>
             </div>
             <div class="thumbnails" id="thumbnails"></div>
@@ -178,10 +178,10 @@
         <!-- denne div samler download-links til app stores, så de to knapper står samlet som én handling. -->
           <div class="store-buttons">
             <a href="#" aria-label="Download på App Store">
-              <img src="img/app-store.png" alt="Download on the App Store">
+              <img src="img/icons/app-store.png" alt="Download on the App Store">
             </a>
             <a href="#" aria-label="Download på Google Play">
-              <img src="img/google-play.png" alt="Get it on Google Play">
+              <img src="img/icons/google-play.png" alt="Get it on Google Play">
             </a>
           </div>
         </div>
@@ -217,7 +217,7 @@
       <div class="reviews-header">  <!-- denne div fungerer som et grid, der holder alle anmeldelseskort samlet i et ensartet layout. -->
         <h2 id="reviews-heading">Elsket af vores kunder</h2>
 
-        <p class="reviews-score" aria-label="Bedømmelse 4,8 ud af 5 stjerner">
+        <p class="reviews-score">
           <span class="score-text">4.8 ud af 5</span> <!-- der er er brugt span her og under så jeg kan style hvert lille element hver for sig, men stadig have dem på samme linje  -->
           <span class="score-stars">★★★★★</span>
           <span class="score-count">(128)</span>
@@ -227,7 +227,7 @@
       <div class="reviews-grid">
         <article class="review-card"> <!-- article bruges til hver anmeldelse, fordi hver kundevurdering er et selvstændigt stykke indhold. -->
           <h3>Sofie L.</h3>
-          <p class="review-stars" aria-label="5 ud af 5 stjerner">★★★★★</p>
+          <p class="review-stars">★★★★★</p>
           <p>
             Bedste højtaler til vores stranddage! Let at tage med, og lyden er
             vildt god uden at være for meget.
@@ -236,7 +236,7 @@
 
         <article class="review-card">
           <h3>Freja M.</h3>
-          <p class="review-stars" aria-label="4 ud af 5 stjerner">★★★★☆</p>
+          <p class="review-stars">★★★★☆</p>
           <p>
             Elsker lyset! Det skaber den perfekte stemning til alt fra yoga og fest
             med mine veninder.
@@ -245,7 +245,7 @@
 
         <article class="review-card">
           <h3>Maja S.</h3>
-          <p class="review-stars" aria-label="5 ud af 5 stjerner">★★★★★</p>
+          <p class="review-stars">★★★★★</p>
           <p>
             Det er virkelig en god højtaler som faktisk kan spille meget højere end
             man regner med.
@@ -254,7 +254,7 @@
 
         <article class="review-card">
           <h3>Julie K.</h3>
-          <p class="review-stars" aria-label="5 ud af 5 stjerner">★★★★★</p>
+          <p class="review-stars">★★★★★</p>
           <p>
             Vi parrede 3 enheder til LUMINA One til min fødselsdag og det var vildt
             fedt at flere kunne styre musikken.
@@ -303,6 +303,6 @@
   </div>
 </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
   </body>
   </html>

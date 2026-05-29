@@ -1,7 +1,4 @@
-      /* Henter skrifttyperne Inter og Playfair Display fra Google Fonts, så de kan bruges i hele designet. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
-      
+    
 /* "*" er en universel selector = gælder for alle elementer på siden*/
 * { 
 margin: 0;  
@@ -42,7 +39,7 @@ background-color: #F0E5DF;
 .nav-links a { /*styling af selve links*/
   font-size: 1.2rem;
   font-weight: 500;
-  font-size: "inter";
+  font-family: "inter";
   color: #B47F7F;
   margin-top: 6px;
   text-decoration: none;
@@ -88,7 +85,6 @@ background-color: #F0E5DF;
         letter-spacing: 12px;
         font-weight: 500;
         color: #B47F7F;
-        -webkit-text-stroke: 0.3px white;
         }
      
       /* Hero slogan  */
@@ -99,7 +95,7 @@ background-color: #F0E5DF;
         font-family: "Playfair Display";
         font-size: 2rem;
         font-weight: 500;
-        margin-top: 70px;
+        margin-top: 50px;
         }
       /* Hero tekst */
       #heroText {
@@ -112,7 +108,7 @@ background-color: #F0E5DF;
         line-height: 1.6;
         max-width: 470px;
         font-family: "inter";
-        margin-top: 70px;
+        margin-top: 50px;
         }
       /* --------------------------- */
       /* Hero knappen */
@@ -704,7 +700,7 @@ background-color: #F0E5DF;
   width: 200px;
   max-width: 100%; /* Sørger for at logoet ikke bliver bredere end sin container. */
   display: block;  /* Gør logoet til et block-element så det ikke har en linje for sig */
-  margin: 0 auto 10px; /* Centrerer logoet og giver luft under det. */
+  margin: 0 auto 20px; /* Centrerer logoet og giver luft under det. */
 }
  /* lille tekst under logo */
 .footer-description {
