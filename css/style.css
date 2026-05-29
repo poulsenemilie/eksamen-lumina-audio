@@ -12,9 +12,9 @@ box-sizing: border-box;
 
 /*Fælles styling for alle elementer i body dvs. næsten hele koden*/
 body {
-font-family: "Inter", sans-serif;
+font-family: "Inter", "Playfair Display";
 color: #1f1a17;
-background-color: #efe3d9;
+background-color: #F0E5DF;
 }
 /* --------------------------- */
 /* NAV BAR */
@@ -42,7 +42,8 @@ background-color: #efe3d9;
 .nav-links a { /*styling af selve links*/
   font-size: 1.2rem;
   font-weight: 500;
-  color: #9c7474;
+  font-size: "inter";
+  color: #B47F7F;
   margin-top: 6px;
   text-decoration: none;
   font-weight: 300;
@@ -86,7 +87,7 @@ background-color: #efe3d9;
         font-family: "Playfair Display";
         letter-spacing: 12px;
         font-weight: 500;
-        color: #9c7474;
+        color: #B47F7F;
         -webkit-text-stroke: 0.3px white;
         }
      
@@ -106,11 +107,11 @@ background-color: #efe3d9;
         top: 290px;
         left: 7.6%;
         letter-spacing: 2px;
-        font-weight: 50;
+        font-weight: 200;
         font-size: 1.1rem;
         line-height: 1.6;
         max-width: 470px;
-        font-family: sans-serif;
+        font-family: "inter";
         margin-top: 70px;
         }
       /* --------------------------- */
@@ -124,9 +125,9 @@ background-color: #efe3d9;
         padding: 20px 65px;     /* Afgør bredde og højde på former i pixels */
         font-size: 1rem;
         font-weight: 700;
-        font-family: sans-serif;
+        font-family: "inter";
         letter-spacing: 3px;
-        background-color: #9c7474;
+        background-color: #B47F7F;
         color: white;
         border: none;
         border-radius: 15px 15px;    /* Afrunding/radios på hjørner. Kan også laves med % og flere tal, hvis man vil have en kompliceret form med flere vinkler/afrundinger */
@@ -146,12 +147,12 @@ background-color: #efe3d9;
 /* --------------------------- */
 
 .info-section {
-  background-color: #efe3d9;
+  background-color: #F0E5DF;
   text-align: center; /* Centrerer overskrift og tekst i sektionen. */
 }
 
 .info-section h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display";
   font-size: 2.5rem;
   font-weight: 500;
   margin-top: 2%;/* Skaber lidt luft over overskriften. */
@@ -160,6 +161,7 @@ background-color: #efe3d9;
 .info-text {
   max-width: 760px; /* Begrænser tekstens bredde, så linjerne ikke bliver for lange. */
   font-size: 0.9rem;
+  font-family: "inter";
   line-height: 1.7;
   margin-left: 22%; /* Flytter teksten ind mod midten. */
   margin-top: 1%; /* Skaber luft mellem overskrift og tekst. */
@@ -187,7 +189,8 @@ background-color: #efe3d9;
   padding: 22px 18px; /* indvendig afstand */
   border-radius: 25px; /* afrundede hjørner */
   font-weight: 550;
-  color: rgb(77, 96, 73); /* font farve */
+  font-family: "inter";
+  color: black; /* font farve */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* let skygge */
   min-height: 95px; /* ens højde på alle felter */
   text-align: left;
@@ -256,7 +259,7 @@ background-color: #efe3d9;
 }
 
 .arrow:hover {
-    color: #b98282;
+    color: #B47F7F;
 }
 
 /* Thumbnails */
@@ -272,7 +275,7 @@ background-color: #efe3d9;
     height: 95px;
     border: 1px solid transparent;
     cursor: pointer;
-    background: #f6ebe7;
+    background: #F0E5DF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -299,7 +302,7 @@ background-color: #efe3d9;
     font-weight: 300;
     font-family: "playfair display";
     letter-spacing: 2px;
-    color: #9e6f6f;
+    color: #B47F7F;
     margin-top: 5%;
 }
 
@@ -386,7 +389,7 @@ background-color: #efe3d9;
     height: 68px;
     border: none;
     border-radius: 5px;
-    background: #bc8284;
+    background: #B47F7F;
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -399,7 +402,7 @@ background-color: #efe3d9;
 }
 
 #addToCart:hover {
-    background: #a96f71;
+    background: #B47F7F;
 }
 
 #addToCart:disabled {
@@ -415,7 +418,7 @@ background-color: #efe3d9;
 .toast {
     margin: 10%;
     padding: 20px 16px;
-    background: #a96f71;
+    background: #B47F7F;
     color: #111;
     border-radius: 4px;
     font-weight: 600;
@@ -452,7 +455,7 @@ background-color: #efe3d9;
 }
 /* overskriften i specifikationer boksen */
 .spec-box h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display";
   font-size: 2rem;
   font-weight: 500;
   color: #111;
@@ -468,7 +471,7 @@ background-color: #efe3d9;
 .spec-box summary {
   list-style: none;
   cursor: pointer;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   font-size: 1rem;
   font-weight: 700;
   color: #111;
@@ -501,7 +504,7 @@ background-color: #efe3d9;
 .spec-box details p {
   margin-top: 16px;
   max-width: 95%;
-  font-family:  sans-serif;
+  font-family:  "inter";
   font-size: 0.98rem;
   line-height: 1.7;
   color: #222;
@@ -523,8 +526,8 @@ background-color: #efe3d9;
   max-width: 520px; /* Begrænser tekstens bredde, så den er nemmere at læse. */
 }
 /* overskriften i app boksen */
-.app-text h3 {
-  font-family: "Playfair Display", serif;
+.app-text h2 {
+  font-family: "Playfair Display";
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.1;
@@ -533,7 +536,7 @@ background-color: #efe3d9;
 }
 /* paragraffen i tekstboksen */
 .app-text p {
-  font-family: sans-serif;
+  font-family: "inter";
   font-size: 1rem;
   line-height: 1.6;
   color: #222;
@@ -626,7 +629,7 @@ background-color: #efe3d9;
 }
 /* selve den lille tekst ved siden af stjerne */
 .score-text {
-  font-family: sans-serif;
+  font-family: "inter";
   font-size: 1.3rem;
   font-weight: 700;
   color: #111;
@@ -640,7 +643,7 @@ background-color: #efe3d9;
 }
 /* hvor mange anmeldelser der er (128) */
 .score-count {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   font-size: 1.1rem;
   color: #7d7d7d;
 }
@@ -661,7 +664,7 @@ background-color: #efe3d9;
 }
 /* navnet i hver anmeldelser f.eks. Sofie L. */
 .review-card h3 {
-  font-family: sans-serif;
+  font-family: "inter";
   font-size: 1.2rem;
   font-weight: 700;
   color: #111;
@@ -677,7 +680,7 @@ background-color: #efe3d9;
 }
 /* selve den lille tekst i hvert anmeldelse */
 .review-card p {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   font-size: 1rem;
   line-height: 1.5;
   color: #111;
@@ -691,17 +694,17 @@ background-color: #efe3d9;
   display: grid; /* Deler footeren op i kolonner. */
   grid-template-columns: 1.4fr 1fr 1fr 0.9fr; /* Giver logo-området mest plads og sociale medier lidt mindre. */
   gap: 70px;  /* Skaber afstand mellem footerens kolonner. */
-  background-color: #f4ece6;
+  background-color: #F0E5DF;
   padding: 50px 55px;
   color: #1f1f1f;
-  font-family: sans-serif;
+  font-family: "inter";
 }
 /* logo i footeren */
 .footer-logo {
   width: 200px;
   max-width: 100%; /* Sørger for at logoet ikke bliver bredere end sin container. */
   display: block;  /* Gør logoet til et block-element så det ikke har en linje for sig */
-  margin: 0 auto 20px; /* Centrerer logoet og giver luft under det. */
+  margin: 0 auto 10px; /* Centrerer logoet og giver luft under det. */
 }
  /* lille tekst under logo */
 .footer-description {

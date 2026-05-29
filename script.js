@@ -138,13 +138,16 @@ addToCartButton.addEventListener('click', () => { //Her tilføjer vi en click-ev
         variant: selectedOption.value,
     };
 
-    console.log(selectedProduct);
+    console.log(selectedProduct); // Skriver produktet i konsollen. Det er nyttigt til test, så man kan se, hvad der ville blive lagt i kurven.
 
-    confirmationMessage.textContent = 'Produktet er lagt i kurven!';
-    confirmationMessage.classList.remove('hidden');
-    confirmationMessage.classList.add('toast');
+    confirmationMessage.textContent = 'Produktet er lagt i kurven!'; // Ændrer teksten i confirmationMessage.
+    confirmationMessage.classList.remove('hidden'); // Fjerner klassen "hidden", så beskeden bliver synlig.
+    confirmationMessage.classList.add('toast'); // Tilføjer klassen "toast", så beskeden kan styles som en popup/besked.
 
-    setTimeout(() => confirmationMessage.classList.add('hidden'), 3000);
+    setTimeout(() => confirmationMessage.classList.add('hidden'), 3000); // Efter 3 sekunder bliver beskeden skjult igen.
 });
 
+// Til sidst kaldes loadProductData.
+// Det starter hele siden op ved at indsætte produktdata,
+// lave dropdown-menuen og opbygge billedkarusellen.
 loadProductData();
