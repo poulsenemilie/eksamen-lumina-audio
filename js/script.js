@@ -5,7 +5,6 @@ const thumbnailsContainer = document.getElementById('thumbnails'); // containere
 const leftArrow = document.querySelector('.arrow.left'); // venstre pil i karusellen.
 const rightArrow = document.querySelector('.arrow.right'); // højre pil i karusellen.
 const productName = document.getElementById('productName'); // produktets navn fra HTML'en.
-const productDescription = document.getElementById('productDescription'); //produktbeskrivelsen fra HTML'en.
 const productPrice = document.getElementById('productPrice'); //produktets pris fra HTML'en.
 const quantityInput = document.getElementById('quantity'); //inputfeltet, hvor brugeren vælger antal.
 const variantSelect = document.getElementById('variant'); // dropdown-menuen, hvor brugeren vælger variant/farve.
@@ -47,7 +46,6 @@ let currentIndex = 0; // currentIndex holder styr på, hvilket billede der vises
 // Denne funktion indlæser produktets data på siden.
 const loadProductData = () => {
     productName.textContent = product.name; // Sætter produktnavnet i h1-elementet.
-    productDescription.textContent = product.description; // Sætter produktbeskrivelsen ind i beskrivelsesfeltet.
     productPrice.textContent = `${product.price} kr.`; // Sætter prisen ind og tilføjer "kr." efter beløbet.
 
     populateVariants(); // Kalder funktionen, der laver dropdown-menuen med varianter.
@@ -127,24 +125,22 @@ rightArrow.addEventListener('click', () => { // Her tilføjer vi en click-event 
 
 quantityInput.addEventListener('input', validateQuantity); // Denne event kører, hver gang brugeren ændrer antal-feltet. Den bruges til at validere, om brugeren har skrevet et gyldigt antal.
 
-addToCartButton.addEventListener('click', () => { //Her tilføjer vi en click-event til "Læg i kurv"-knappen.
-    const selectedOption = variantSelect.options[variantSelect.selectedIndex]; // Finder den variant/farve, som brugeren har valgt.
+addToCartButton.addEventListener('click', () => { 
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex]; 
 
-    const selectedProduct = { // Opretter et objekt med det produkt, brugeren vil lægge i kurven.
-        name: productName.textContent, // Produktets detaljer hentes direkte fra HTML'en.
-        description: productDescription.textContent,
+    const selectedProduct = {
+        name: productName.textContent,
         price: productPrice.textContent,
         quantity: quantityInput.value,
         variant: selectedOption.value,
     };
 
-    console.log(selectedProduct); // Skriver produktet i konsollen. Det er nyttigt til test, så man kan se, hvad der ville blive lagt i kurven.
+    console.log(selectedProduct); 
+    confirmationMessage.textContent = 'Produktet er lagt i kurven!'; 
+    confirmationMessage.classList.remove('hidden'); 
+    confirmationMessage.classList.add('toast');
 
-    confirmationMessage.textContent = 'Produktet er lagt i kurven!'; // Ændrer teksten i confirmationMessage.
-    confirmationMessage.classList.remove('hidden'); // Fjerner klassen "hidden", så beskeden bliver synlig.
-    confirmationMessage.classList.add('toast'); // Tilføjer klassen "toast", så beskeden kan styles som en popup/besked.
-
-    setTimeout(() => confirmationMessage.classList.add('hidden'), 3000); // Efter 3 sekunder bliver beskeden skjult igen.
+    setTimeout(() => confirmationMessage.classList.add('hidden'), 3000);
 });
 
 // Til sidst kaldes loadProductData.
